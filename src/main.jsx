@@ -18,6 +18,15 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/*" element={<App />}></Route>
       </Routes>
     </Router>
-    <AnimatedCursor />
+    <AnimatedCursor
+      outerSize={35}
+      outerScale={1.8}
+      innerStyle={{
+        backgroundColor: "black",
+      }}
+      outerStyle={{
+        border: "2px solid black",
+      }}
+    />
   </React.StrictMode>
 );
