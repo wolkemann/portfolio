@@ -25,7 +25,7 @@ export const fadeIn = (direction, delay) => {
   };
 };
 
-export const fade = (delay) => {
+export const fade = (delay = 1) => {
   return {
     hidden: {
       opacity: 0,
