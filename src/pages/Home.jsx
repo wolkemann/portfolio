@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { motion } from "framer-motion";
 
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import Loader from "../components/Loader/Loader";
 import HomeScene from "../components/3DScenes/HomeScene";
 
@@ -46,13 +46,12 @@ const Home = () => {
             Web Developer
           </motion.h2>
           <motion.p
-            className="font-thin text-2xl italic my-12"
+            className="text-2xl italic my-12"
             variants={fade(7)}
             initial="hidden"
             animate={textTyped ? "show" : ""}
           >
-            — <Link to="/projects">from</Link>{" "}
-            <span className="text-accent">Hamburg</span> with love —
+            — from <span className="text-accent">Hamburg</span> with love —
           </motion.p>
         </div>
         <Sidebar />

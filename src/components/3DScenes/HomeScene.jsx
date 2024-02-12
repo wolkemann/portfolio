@@ -44,9 +44,9 @@ const animations = {
     x: [3, 0],
     y: [1, 0],
     transition: {
-      type: "easeIn",
+      type: "spring",
       delay: 0,
-      duration: 2.5,
+      duration: 5.5,
     },
   },
 };
