@@ -29,7 +29,10 @@ const menuItems = [
 
 export const Navigation = () => {
   return (
-    <motion.ul variants={variants}>
+    <motion.ul
+      variants={variants}
+      className="flex flex-col gap-3 justify-between"
+    >
       {menuItems.map((menu, index) => (
         <MenuItem key={index} {...menu} />
       ))}

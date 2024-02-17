@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import useDomProps from "../../utils/useDomProps";
 import TextAnim from "../Typewriter/Typewriter";
 import { motion } from "framer-motion";
 import getRandomQuotes from "../../utils/quotes";
@@ -18,19 +19,9 @@ const mainWindowVariants = {
     },
   },
   exit: {
-    clipPath: [`circle(${window.innerHeight * 3}px at 50vw 50vh)`],
+    clipPath: [`circle(${window.innerHeight * 2 + 200}px at 50vw 50vh)`],
     transition: {
-      duration: 3,
-    },
-  },
-};
-
-const spinnerVariants = {
-  visible: {
-    scale: [1, 1.5],
-    rotate: [0, 360],
-    transition: {
-      duration: 1,
+      duration: 2.5,
     },
   },
 };
@@ -46,16 +37,16 @@ const quoteVariants = {
     },
   },
   fadeOut: {
-    opacity: [1, 0],
-    y: 123,
+    opacity: 0,
     transition: {
-      duration: 5.5,
+      duration: 0,
     },
   },
 };
 
 const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
   const [randomQuote, setRandomQuote] = useState(getRandomQuotes());
+  const { width: windowWidth } = useDomProps();
   const [domText, setDomtext] = useState(0);
 
   function getOffset(el) {
@@ -70,6 +61,25 @@ const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
     setDomtext(getOffset(document.getElementById("quoteDOM")).left);
   }, [domText]);
 
+  const spinnerVariants = {
+    initial: {
+      scale: windowWidth <= 640 ? [0.8, 1.2] : [1, 1.5],
+    },
+    visible: {
+      scale: windowWidth <= 640 ? [0.8, 1.2] : [1, 1.5],
+      rotate: [0, 360],
+      transition: {
+        duration: 1,
+      },
+    },
+    exit: {
+      scale: windowWidth <= 640 ? 0.8 : 1,
+      transition: {
+        duration: 0,
+      },
+    },
+  };
+
   return (
     <>
       {children}
@@ -82,7 +92,9 @@ const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
       >
         <motion.div
           variants={spinnerVariants}
+          initial="initial"
           animate={progress === 100 ? "visible" : ""}
+          exit="exit"
           className="hexagon self-center"
           aria-label="Animated hexagonal ripples"
         >
@@ -136,15 +148,14 @@ const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
           </div>
         </motion.div>
         <h2
-          id="quoteDOM"
-          className="h2__quote absolute "
+          className="h2__quote absolute opacity-0"
           style={{
             top: "80px",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
+            textAlign: "center",
+            width: "100%",
           }}
         >
-          {randomQuote}
+          <span id="quoteDOM">{randomQuote}</span>
         </h2>
         {progress === 100 && (
           <motion.h2
@@ -152,6 +163,7 @@ const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
             variants={quoteVariants}
             initial="initial"
             animate="visible"
+            exit="fadeOut"
             style={{
               left: domText,
             }}

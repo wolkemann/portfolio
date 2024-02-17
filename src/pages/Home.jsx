@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useProgress } from "@react-three/drei";
 import { motion } from "framer-motion";
@@ -23,7 +22,7 @@ const Home = () => {
         <div className="w-screen p-12 text-center md:w-[800px] md:m-auto md:p-0">
           <motion.h2
             className="h2"
-            variants={fadeIn("right", 2)}
+            variants={fadeIn("right", 1.5)}
             initial="hidden"
             animate={textTyped ? "show" : ""}
           >
@@ -31,7 +30,7 @@ const Home = () => {
           </motion.h2>
           <motion.h1
             className="h1"
-            variants={fadeIn("up", 4)}
+            variants={fadeIn("up", 2.5)}
             initial="hidden"
             animate={textTyped ? "show" : ""}
           >
@@ -39,7 +38,7 @@ const Home = () => {
           </motion.h1>
           <motion.h2
             className="h2 text-accent"
-            variants={fadeIn("left", 5.5)}
+            variants={fadeIn("left", 3)}
             initial="hidden"
             animate={textTyped ? "show" : ""}
           >
@@ -47,7 +46,7 @@ const Home = () => {
           </motion.h2>
           <motion.p
             className="text-2xl italic my-12"
-            variants={fade(7)}
+            variants={fade(4.5)}
             initial="hidden"
             animate={textTyped ? "show" : ""}
           >

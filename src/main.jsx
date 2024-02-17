@@ -20,7 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     </Router>
     <AnimatedCursor
       outerSize={35}
-      outerScale={1.8}
+      outerScale={1.5}
       innerStyle={{
         backgroundColor: "black",
       }}
