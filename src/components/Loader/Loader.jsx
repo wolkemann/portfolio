@@ -81,101 +81,98 @@ const Loader = ({ children, progress, textTyped, handleTextTyped }) => {
   };
 
   return (
-    <>
-      {children}
+    <motion.div
+      layout
+      variants={mainWindowVariants}
+      animate={textTyped ? "loaded" : ""}
+      exit="exit"
+      className="w-full h-screen flex flex-col justify-center top-0 left-0 absolute z-50 bg-bgloader"
+    >
       <motion.div
-        layout
-        variants={mainWindowVariants}
-        animate={textTyped ? "loaded" : ""}
+        variants={spinnerVariants}
+        initial="initial"
+        animate={progress === 100 ? "visible" : ""}
         exit="exit"
-        className="w-full h-screen flex flex-col justify-center top-0 left-0 absolute z-50 bg-bgloader"
+        className="hexagon self-center"
+        aria-label="Animated hexagonal ripples"
       >
-        <motion.div
-          variants={spinnerVariants}
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+        <div className="hexagon__group">
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+          <div className="hexagon__sector"></div>
+        </div>
+      </motion.div>
+      <h2
+        className="h2__quote absolute opacity-0"
+        style={{
+          top: "80px",
+          textAlign: "center",
+          width: "100%",
+        }}
+      >
+        <span id="quoteDOM">{randomQuote}</span>
+      </h2>
+      {progress === 100 && (
+        <motion.h2
+          className="h2__quote absolute top-10"
+          variants={quoteVariants}
           initial="initial"
-          animate={progress === 100 ? "visible" : ""}
-          exit="exit"
-          className="hexagon self-center"
-          aria-label="Animated hexagonal ripples"
-        >
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-          <div className="hexagon__group">
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-            <div className="hexagon__sector"></div>
-          </div>
-        </motion.div>
-        <h2
-          className="h2__quote absolute opacity-0"
+          animate="visible"
+          exit="fadeOut"
           style={{
-            top: "80px",
-            textAlign: "center",
-            width: "100%",
+            left: domText,
           }}
         >
-          <span id="quoteDOM">{randomQuote}</span>
-        </h2>
-        {progress === 100 && (
-          <motion.h2
-            className="h2__quote absolute top-10"
-            variants={quoteVariants}
-            initial="initial"
-            animate="visible"
-            exit="fadeOut"
-            style={{
-              left: domText,
-            }}
-          >
-            <TextAnim
-              randomQuote={randomQuote}
-              handleFinish={() => handleTextTyped(true)}
-            />
-          </motion.h2>
-        )}
-      </motion.div>
-    </>
+          <TextAnim
+            randomQuote={randomQuote}
+            handleFinish={() => handleTextTyped(true)}
+          />
+        </motion.h2>
+      )}
+    </motion.div>
   );
 };
 

@@ -18,6 +18,7 @@ function App() {
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<Projects />} />
         </Routes>
       </AnimatePresence>
     </>

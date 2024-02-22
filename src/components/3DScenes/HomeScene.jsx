@@ -1,35 +1,46 @@
 import { Canvas } from "@react-three/fiber";
 import RomanStatue from "../3DModels/RomanStatue";
-import {
-  Bloom,
-  DepthOfField,
-  EffectComposer,
-  Noise,
-  Vignette,
-} from "@react-three/postprocessing";
 import { motion } from "framer-motion-3d";
 import { Float } from "@react-three/drei";
 
 export default function HomeScene({ loaded }) {
   return (
     <div className="canvasScreen">
-      <Canvas dpr={[1, 1.5]} camera={{ position: [-0.5, 0, 4.9], zoom: 1.8 }}>
-        <motion.group variants={animations} animate={loaded ? "show" : ""}>
-          <RomanStatue
-            floatSpeed={2}
-            floatIntensity={0.8}
-            floatRotation={0.05}
-            floatRange={[0, 0]}
-            rotation={[-1.5, -0.1, -0.5]}
-            position={[0, -6.5, 0]}
-            scale={1.5}
-          />
+      <Canvas dpr={[1, 1.5]} camera={{ position: [-0.5, 0, 4.9], zoom: 4.2 }}>
+        <motion.group
+          variants={statueAnimations}
+          animate={loaded ? "show" : ""}
+        >
+          <Float
+            speed={1}
+            rotationIntensity={0.2}
+            floatIntensity={0.03}
+            floatingRange={[0, 0.05]}
+          >
+            <RomanStatue
+              rotation={[-1.9, -0, 0.1]}
+              position={[0.9, -4.4, 0]}
+              scale={1.5}
+            />
+          </Float>
         </motion.group>
 
-        <Float>
+        {
+          <motion.mesh
+            variants={lineAnimations}
+            animate={loaded ? "show" : ""}
+            position={[0.6, 0.2, -3]}
+            rotation={[0, 0, 0]}
+          >
+            <boxGeometry args={[7, 2, 1]} />
+            <meshToonMaterial color={0xff9900ff} />
+          </motion.mesh>
+        }
+
+        <Float speed={0.4}>
           <directionalLight
             rotation={[-1.9, -0.6, 0.5]}
-            position={[5, 3.5, 2]}
+            position={[-5, 7.5, 2]}
           />
         </Float>
 
@@ -39,14 +50,25 @@ export default function HomeScene({ loaded }) {
   );
 }
 
-const animations = {
+const statueAnimations = {
   show: {
-    x: [3, 0],
-    y: [1, 0],
+    x: [-5, 0],
+    rotateY: [-4, 0],
     transition: {
       type: "spring",
-      delay: 0,
-      duration: 5.5,
+      delay: 1,
+      duration: 5,
+    },
+  },
+};
+
+const lineAnimations = {
+  show: {
+    x: [20, 0],
+    transition: {
+      type: "tween",
+      delay: 0.5,
+      duration: 2.5,
     },
   },
 };

@@ -34,7 +34,6 @@ html {
 
 body {
   background-color: #b200b2;
-  background-color: #0a0c37ff;
-  background: linear-gradient(180deg, #0a0c37ff 65%, rgb(24, 30, 136) 100%);
+  background-color: #0a0c37;
   background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
 }

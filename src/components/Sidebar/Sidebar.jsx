@@ -11,7 +11,6 @@ import MessageBox from "./MessageBox";
 const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 800}px at 40px 40px)`,
-
     transition: {
       type: "spring",
       stiffness: 20,
@@ -43,13 +42,29 @@ const sideImage = {
   },
 };
 
+const menuElement = {
+  open: {
+    display: "grid",
+    transition: {
+      delay: 0,
+      duration: 0,
+    },
+  },
+  closed: {
+    display: "none",
+    transition: {
+      delay: 1,
+    },
+  },
+};
+
 export const Sidebar = () => {
   const { width: windowWidth, height } = useDomProps();
   const [isOpen, toggleOpen] = useCycle(false, true);
 
   return (
     <motion.nav
-      className="absolute top-0 left-0 bottom-0 flex"
+      className="absolute top-0 left-0 bottom-0 flex "
       animate={isOpen ? "open" : "closed"}
     >
       <motion.div
@@ -58,19 +73,23 @@ export const Sidebar = () => {
         custom={height}
       ></motion.div>
 
-      <div className="relative flex w-screen h-screen justify-center gap-[10px]">
-        <div className="md:w-[750px] grid grid-cols-2 row-template gap-5 gap-y-5">
+      <motion.div
+        variants={menuElement}
+        className="relative flex w-screen h-screen justify-center gap-[10px]"
+      >
+        <motion.div className="md:w-[750px] grid grid-cols-2 row-template gap-5 gap-y-5">
           <motion.div variants={sideImage}>
             <img src={logo} className="w-[350px]" />
           </motion.div>
           <Navigation />
-          {windowWidth >= 768 && (
+          {/* TODO: Feature about random message when menu opens
+          windowWidth >= 768 && (
             <div className="col-span-2">
               <MessageBox />
             </div>
-          )}
-        </div>
-      </div>
+          )*/}
+        </motion.div>
+      </motion.div>
 
       <MenuButton toggle={() => toggleOpen()} />
     </motion.nav>

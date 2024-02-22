@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -14,6 +16,7 @@ export default {
       xl: "1200px",
     },
     colors: {
+      ...colors,
       primary: "#fafafa",
       secondary: "#393A47",
       accent: "#5cecffff",

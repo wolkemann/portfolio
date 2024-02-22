@@ -47,3 +47,17 @@ export const fade = (delay = 1) => {
     },
   };
 };
+
+export const startButton = {
+  hidden: {
+    x: -1000,
+  },
+  animate: {
+    x: 0,
+    transition: {
+      type: "spring",
+      duration: 1.4,
+      delay: 8.5,
+    },
+  },
+};

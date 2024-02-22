@@ -32,6 +32,7 @@ export default function getRandomQuotes() {
     "The Roar of the Spark",
     "Find your Own Way",
     "Smell of the Game",
+    "Boys Don't Cry",
     /* Oingo boing */
     "Dead Men's Party",
     "No One Lives Forever",
