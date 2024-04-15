@@ -15,7 +15,7 @@ import CustomToonMaterial from "../threeUtils/customToonMaterial/material";
 export function Lentes(props) {
   const { nodes } = useGLTF("lentes/scene-transformed.glb");
 
-  // rgb(10, 12, 55)
+  // #0a0c37
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -29,11 +29,12 @@ export function Lentes(props) {
 
       <mesh
         geometry={nodes.Object_6.geometry}
-        material={new CustomToonMaterial({ red: 0.1, green: 0.12, blue: 0.55 })}
         position={[0, 0.065, 0]}
         rotation={[Math.PI / 2, 0, 0.017]}
         scale={[1.087, 1.087, 1.099]}
-      />
+      >
+        <meshToonMaterial color={0x0a0c37ff} />
+      </mesh>
       <mesh
         geometry={nodes.Object_10.geometry}
         material={new CustomToonMaterial({ red: 0, green: 0, blue: 0 })}

@@ -18,7 +18,6 @@ export default function HomeScene() {
         eventPrefix="client"
         camera={{ zoom: 15 }}
       >
-        
         <group position={modelPos} rotation={[0, -1.55, 0]}>
           <Woman position={[0, -0.95, 0.0]} />
           <Lentes position={[0, 0.155, 0.063]} scale={0.0225} />
