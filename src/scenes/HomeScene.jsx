@@ -20,7 +20,7 @@ export default function HomeScene() {
       >
         <group position={modelPos}>
           <Woman position={[0, -0.95, 0.0]} />
-          <Lentes position={[0, 0.155, 0.065]} scale={0.0225} />
+          <Lentes position={[0, 0.155, 0.063]} scale={0.0225} />
         </group>
 
         <OrbitControls />
