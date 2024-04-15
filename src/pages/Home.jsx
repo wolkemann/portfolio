@@ -3,7 +3,7 @@ import HomeScene from "../scenes/HomeScene";
 export default function Home() {
   return (
     <main>
-      <nav className="md:text-[20px] md:pl-8 md:p-5 md:m-auto p-5">
+      <nav className="md:text-[20px] md:p-8 md:m-auto p-5">
         <ul className="md:gap-10 md:justify-start flex justify-between">
           <li>Home</li>
           <li>About me</li>
@@ -11,7 +11,7 @@ export default function Home() {
           <li>Blog</li>
         </ul>
       </nav>
-      <div className="md:p-8 md:w-[768px] h-screen flex flex-col p-5">
+      <div className="md:p-8 md:w-[768px] xl:w-[900px] xl:m-auto h-screen flex flex-col p-5">
         <h1 className="md:text-[85px] md:text-left text-[45px] text-center">
           Federico Sardo
         </h1>
