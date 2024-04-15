@@ -29,6 +29,7 @@ export function Woman(props) {
     <group {...props} dispose={null}>
       <primitive object={nodes._rootJoint} />
       <skinnedMesh
+        castShadow
         geometry={nodes.Object_85.geometry}
         material={new CustomToonMaterial({ red: 170, blue: 170, green: 0 })}
         skeleton={nodes.Object_85.skeleton}
