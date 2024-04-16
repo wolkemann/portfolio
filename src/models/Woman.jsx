@@ -23,7 +23,7 @@ export function Woman(props) {
     nodes["mixamorigRightHand_035"].rotation.x = 0.08653752304281702;
     nodes["mixamorigRightHand_035"].rotation.y = 0.9;
     nodes["mixamorigRightHand_035"].rotation.z = 0.19472761828419707;
-  }, []);
+  }, [nodes]);
 
   return (
     <group {...props} dispose={null}>
