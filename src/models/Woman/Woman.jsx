@@ -10,20 +10,17 @@ Title: Women/Female Body Base Rigged
 
 import React, { useLayoutEffect } from "react";
 import { Outlines, useGLTF } from "@react-three/drei";
-import CustomToonMaterial from "../threeUtils/customToonMaterial/material";
+import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
+import { usePortfolio } from "../../context/PortfolioContext";
+import { setwomanPoses } from "./setWomanPoses";
 
 export function Woman(props) {
+  const { womanPose } = usePortfolio();
   const { nodes, materials } = useGLTF("woman/scene-transformed.glb");
 
   useLayoutEffect(() => {
-    nodes["mixamorigLeftShoulder_08"].rotation.x = 1.5636573071467672;
-    nodes["mixamorigLeftShoulder_08"].rotation.y = -0.75;
-    nodes["mixamorigLeftShoulder_08"].rotation.z = -1.5990082895108586;
-
-    nodes["mixamorigRightHand_035"].rotation.x = 0.08653752304281702;
-    nodes["mixamorigRightHand_035"].rotation.y = 0.9;
-    nodes["mixamorigRightHand_035"].rotation.z = 0.19472761828419707;
-  }, [nodes]);
+    setwomanPoses(womanPose, nodes);
+  }, [womanPose]);
 
   return (
     <group {...props} dispose={null}>

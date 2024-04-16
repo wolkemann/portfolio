@@ -8,16 +8,21 @@ Source: https://sketchfab.com/3d-models/lentes-lucy-2-d27ffa45966949ec96c11b4623
 Title: Lentes-lucy-(2)
 */
 
-import React, { useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { useGLTF } from "@react-three/drei";
-import CustomToonMaterial from "../threeUtils/customToonMaterial/material";
+import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
+import { usePortfolio } from "../../context/PortfolioContext";
+import { setLentesPoses } from "./setLentesPoses";
 
 export function Lentes(props) {
+  const { womanPose } = usePortfolio();
   const { nodes } = useGLTF("lentes/scene-transformed.glb");
+
+  const { position, rotation } = setLentesPoses(womanPose, nodes);
 
   // #0a0c37
   return (
-    <group {...props} dispose={null}>
+    <group {...props} position={position} rotation={rotation} dispose={null}>
       <mesh
         geometry={nodes.Object_4.geometry}
         position={[0, 0.182, 0]}
