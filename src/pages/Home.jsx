@@ -1,6 +1,9 @@
+import { usePortfolioDispatch } from "../context/PortfolioContext";
 import HomeScene from "../scenes/HomeScene";
 
 export default function Home() {
+  const dispatch = usePortfolioDispatch();
+
   return (
     <main>
       <nav className="md:text-[20px] md:p-8 md:m-auto p-5">
@@ -15,7 +18,10 @@ export default function Home() {
         className="md:p-8 md:pt-0 md:w-[768px] md:m-auto 
       h-screen flex flex-col p-5"
       >
-        <div className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10">
+        <div
+          className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
+          onClick={() => dispatch({ type: "modifyPose", womanPose: "gg" })}
+        >
           <h1
             className="md:text-[85px] md:text-left 
           text-[45px] text-center blue-500"
