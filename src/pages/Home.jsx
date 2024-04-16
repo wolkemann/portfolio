@@ -5,7 +5,7 @@ export default function Home() {
     <main>
       <nav className="md:text-[20px] md:p-8 md:m-auto p-5">
         <ul className="md:gap-10 md:justify-start flex justify-between">
-          <li>Home</li>
+          <li className="link">Home</li>
           <li>About me</li>
           <li>Projects</li>
           <li>Blog</li>
@@ -23,10 +23,10 @@ export default function Home() {
             Federico Sardo
           </h1>
           <h2 className="md:my-1 text-[25px] my-2">Developer</h2>
-          <h2 className="text-[25px]">From Hamburg with Love</h2>
+          <h2 className="md:mb-0 text-[25px] my-2">From Hamburg with Love</h2>
         </div>
         <p
-          className="md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:p-8 md:m-auto xl:w-[500px] 
+          className="md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:my-0 md:p-10 xl:w-[505px] 
         xl:text-[50px] my-2 text-center"
         >
           “Sur des pensers nouveaux, faisons des verses antiques”
