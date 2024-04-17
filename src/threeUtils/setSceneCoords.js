@@ -1,9 +1,9 @@
 export const setSceneCoords = (pos) => {
   switch (pos) {
-    case "initialPose": {
+    case "Pose_0": {
       return [0, -1.55, 0];
     }
-    case "gg": {
+    case "Pose_1": {
       return [0, -5.55, 0];
     }
   }

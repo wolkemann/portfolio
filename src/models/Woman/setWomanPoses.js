@@ -1,6 +1,6 @@
 export const setwomanPoses = (pose, nodes) => {
   switch (pose) {
-    case "initialPose": {
+    case "Pose_0": {
       nodes["_rootJoint"].rotation.x = 0;
       nodes["_rootJoint"].rotation.y = 0;
       nodes["_rootJoint"].rotation.z = 0;
@@ -244,7 +244,7 @@ export const setwomanPoses = (pose, nodes) => {
       nodes["mixamorigRightToe_End_end_077"].rotation.z = 0;
       break;
     }
-    case "gg": {
+    case "Pose_1": {
       nodes["_rootJoint"].rotation.x = 0;
       nodes["_rootJoint"].rotation.y = 0;
       nodes["_rootJoint"].rotation.z = 0;

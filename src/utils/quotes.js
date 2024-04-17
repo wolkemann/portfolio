@@ -1,0 +1,63 @@
+export default function getRandomQuotes() {
+  const quotes = [
+    /* Joy Division and New Order songs name */
+    "Atrocity Exhibition",
+    "A Means to and End",
+    "Heart and Soul",
+    "Twenty Four Hours",
+    "Dead Souls",
+    "She's lost Control",
+    "Dreams Never End",
+    "Cries and Whispers",
+    "Everything's Gone Green",
+    "We All Stand",
+    "Your Silent Face",
+    "Leave Me Alone",
+    "Thieves Like Us",
+    "The Perfect Kiss",
+    "Sooner Than You Think",
+    "As It Is When It Was",
+    "Bizarre Love Triangle",
+    "Round & Round",
+    "World in Motion",
+    "Everyone Everywhere",
+    "Someone like You",
+    "Working Overtime",
+    "I'll Stay with You",
+    "Californian Grass",
+    "People on the High Line",
+    "Nothing but a Fool",
+    "Unlearn This Hatred",
+    "New Dawn Fades",
+    "The Roar of the Spark",
+    "Find your Own Way",
+    "Smell of the Game",
+    "Boys Don't Cry",
+    /* Oingo boing */
+    "Dead Men's Party",
+    "No One Lives Forever",
+    /* Suda51 quotes */
+    "The Silver Case",
+    "Kill the Past",
+    "Kill the Life",
+    "No More Heroes",
+    "Flower Sun and Rain",
+    "Let It Die",
+    "Sine Mora",
+    "Black Night Direction",
+    "Midori Midorikawa",
+    /* Film titles */
+    "Your Name",
+    "Angel's Egg",
+    "Nocturnal Animals",
+    /* Miscellaneous */
+    "Tolling the Coming of the End",
+    "The very Edge of the Map",
+    "Ash seeketh Embers",
+    "Outcome is secondary",
+    "Superbolide",
+    "The Blackest Night",
+  ];
+
+  return quotes[[(quotes.length * Math.random()) | 0]];
+}
