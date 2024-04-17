@@ -1,0 +1,7 @@
+body {
+  cursor: none;
+}
+
+.custom-cursor {
+  mix-blend-mode: difference;
+}

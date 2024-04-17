@@ -36,5 +36,5 @@ const portfolioReducer = (state, action) => {
 };
 
 const initialState = {
-  womanPose: "initialPose",
+  womanPose: "Pose_0",
 };

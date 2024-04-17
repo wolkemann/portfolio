@@ -1,12 +1,12 @@
 export const setLentesPoses = (pose, nodes) => {
   switch (pose) {
-    case "initialPose": {
+    case "Pose_0": {
       return {
         position: [0, 0.155, 0.063],
         rotation: [0, 0, 0],
       };
     }
-    case "gg": {
+    case "Pose_1": {
       return { position: [0, 0.179, 0.018], rotation: [-0.4, 0, 0] };
     }
   }

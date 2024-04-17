@@ -20,7 +20,7 @@ export default function Home() {
       >
         <div
           className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
-          onClick={() => dispatch({ type: "modifyPose", womanPose: "gg" })}
+          onClick={() => dispatch({ type: "modifyPose", womanPose: "Pose_1" })}
         >
           <h1
             className="md:text-[85px] md:text-left 

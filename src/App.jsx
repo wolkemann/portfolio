@@ -3,6 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
 
 import "custom-cursor-react/dist/index.css";
+import "../src/css/cursor.css";
 
 // Fonts
 import "@fontsource-variable/roboto-serif";
@@ -24,14 +25,13 @@ function App() {
       <CustomCursor
         targets={[".link", ".gg"]}
         customClass="custom-cursor"
-        dimensions={30}
-        fill="#FFF"
+        dimensions={120}
         smoothness={{
           movement: 0.2,
           scale: 0.1,
           opacity: 0.2,
         }}
-        targetScale={4}
+        targetScale={3.5}
         targetOpacity={0.5}
       />
     </PortfolioProvider>
