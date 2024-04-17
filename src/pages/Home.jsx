@@ -1,15 +1,18 @@
+import { NavLink } from "react-router-dom";
 import { usePortfolioDispatch } from "../context/PortfolioContext";
 import HomeScene from "../scenes/HomeScene";
+import Loader from "../components/Loader/Loader";
 
 export default function Home() {
   const dispatch = usePortfolioDispatch();
 
   return (
     <main>
+      <Loader />
       <nav className="md:text-[20px] md:p-8 md:m-auto p-5">
         <ul className="md:gap-10 md:justify-start flex justify-between">
           <li className="link">Home</li>
-          <li>About me</li>
+          <li className="link"><NavLink to="/about-me">About me</NavLink></li>
           <li>Projects</li>
           <li>Blog</li>
         </ul>

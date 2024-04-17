@@ -1,16 +1,16 @@
-import CustomCursor from "custom-cursor-react";
-import { AnimatePresence } from "framer-motion";
-import { Route, Routes, useLocation } from "react-router-dom";
-
-import "custom-cursor-react/dist/index.css";
-import "../src/css/cursor.css";
-
 // Fonts
 import "@fontsource-variable/roboto-serif";
 
 // Pages
 import Home from "./pages/Home";
+import About from "./pages/About";
+
+//Providers
 import { PortfolioProvider } from "./context/PortfolioContext";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+
+
 
 function App() {
   const location = useLocation();
@@ -20,20 +20,9 @@ function App() {
       <AnimatePresence mode="wait">
         <Routes location={location} key={location.pathname}>
           <Route index element={<Home />} />
+          <Route path='/about-me' element={<About />} />
         </Routes>
       </AnimatePresence>
-      <CustomCursor
-        targets={[".link", ".gg"]}
-        customClass="custom-cursor"
-        dimensions={120}
-        smoothness={{
-          movement: 0.2,
-          scale: 0.1,
-          opacity: 0.2,
-        }}
-        targetScale={3.5}
-        targetOpacity={0.5}
-      />
     </PortfolioProvider>
   );
 }
