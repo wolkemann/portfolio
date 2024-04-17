@@ -29,6 +29,12 @@ const portfolioReducer = (state, action) => {
     case "modifyPose": {
       return { ...state, womanPose: action.womanPose };
     }
+    case "updatePageLoadedState": {
+      return { ...state, pageLoaded: action.pageLoaded };
+    }
+    case "updateQuoteFinishedState": {
+      return { ...state, quoteFinished: action.quoteFinished };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
@@ -37,4 +43,6 @@ const portfolioReducer = (state, action) => {
 
 const initialState = {
   womanPose: "Pose_0",
+  pageLoaded: false,
+  quoteFinished: false,
 };

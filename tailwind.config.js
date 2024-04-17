@@ -6,6 +6,7 @@ export default {
   theme: {
     colors: {
       ...colors,
+      backgroundColor: "#35daec",
     },
     extend: {},
   },

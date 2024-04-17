@@ -12,10 +12,6 @@ export default function TrackingLight(props) {
     ) {
       light.current.position.x = state.pointer.x;
     }
-
-    if (light.current.position.y > 0.87 && state.pointer.y > 0.87) {
-      light.current.position.y = state.pointer.y;
-    }
   });
 
   return <directionalLight ref={light} {...props} />;
