@@ -1,4 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
+import getRandomQuotes from "../utils/quotes";
 
 const PortfolioContext = createContext(null);
 
