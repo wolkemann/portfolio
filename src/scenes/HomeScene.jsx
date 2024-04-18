@@ -8,15 +8,24 @@ import { setSceneCoords } from "../threeUtils/setSceneCoords";
 import { usePortfolio } from "../context/PortfolioContext";
 import CustomToonMaterial from "../threeUtils/customToonMaterial/material";
 
+import {
+  EffectComposer,
+  DepthOfField,
+  Bloom,
+  Noise,
+  Vignette,
+  Glitch,
+} from "@react-three/postprocessing";
+
+import { GlitchMode } from "postprocessing";
+
 export default function HomeScene() {
   const [width, height] = useWindowSize();
-  const { womanPose } = usePortfolio();
-
-  const responsivePos = width >= 768 ? [0, 0, 0] : [0, -0.03, 0];
+  const { womanPose, poseChanging } = usePortfolio();
 
   return (
     <>
-      <group position={responsivePos} rotation={setSceneCoords(womanPose)}>
+      <group position={[0, 0, 0]} rotation={setSceneCoords(womanPose)}>
         <Woman position={[0, -0.95, 0.0]} />
         <Lentes scale={0.0225} />
       </group>
@@ -31,6 +40,19 @@ export default function HomeScene() {
 
       <ambientLight />
       <TrackingLight />
+
+      <EffectComposer>
+        {poseChanging && (
+          <Glitch
+            delay={[0, 3.5]} // min and max glitch delay
+            duration={[0.6, 1.0]} // min and max glitch duration
+            strength={[0.3, 1.0]} // min and max glitch strength
+            mode={GlitchMode.CONSTANT_WILD} // glitch mode
+            active // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
+            ratio={0.85} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
+          />
+        )}
+      </EffectComposer>
       {!import.meta.env.PROD && <OrbitControls />}
     </>
   );
