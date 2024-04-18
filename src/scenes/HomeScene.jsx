@@ -1,5 +1,4 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, SpotLight } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 
 import useWindowSize from "../hooks/useWindowSize";
 import TrackingLight from "../threeUtils/TrackingLight";
@@ -30,9 +29,9 @@ export default function HomeScene() {
         <planeGeometry args={[width, height]} />
       </mesh>
 
-      {!import.meta.env.PROD && <OrbitControls />}
       <ambientLight />
       <TrackingLight />
+      {!import.meta.env.PROD && <OrbitControls />}
     </>
   );
 }
