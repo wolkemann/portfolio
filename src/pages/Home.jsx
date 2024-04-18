@@ -3,6 +3,7 @@ import { usePortfolioDispatch } from "../context/PortfolioContext";
 import HomeScene from "../scenes/HomeScene";
 import Loader from "../components/Loader/Loader";
 import { Canvas } from "@react-three/fiber";
+import Sidebar from "../components/Sidebar/Sidebar";
 
 export default function Home() {
   const dispatch = usePortfolioDispatch();
@@ -10,24 +11,12 @@ export default function Home() {
   return (
     <main>
       <Loader />
-      <nav className="md:text-[20px] md:p-8 md:m-auto p-5">
-        <ul className="md:gap-10 md:justify-start flex justify-between">
-          <li className="link">Home</li>
-          <li className="link">
-            <NavLink to="/about">About me</NavLink>
-          </li>
-          <li>Projects</li>
-          <li>Blog</li>
-        </ul>
-      </nav>
+      <Sidebar />
       <div
         className="md:p-8 md:pt-0 md:w-[768px] md:m-auto 
-      h-screen flex flex-col p-5"
+      h-screen flex flex-col p-5 justify-center"
       >
-        <div
-          className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
-          onClick={() => dispatch({ type: "modifyPose", womanPose: "Pose_1" })}
-        >
+        <div className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10">
           <h1
             className="md:text-[85px] md:text-left 
           text-[45px] text-center blue-500"

@@ -15,14 +15,17 @@ html {
   font-family: "Roboto Serif Variable", sans-serif;
 }
 
-body {
+body,
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 .placeholder {
   background-color: rgb(30, 123, 134);
 }
+
 .canvas {
   background: #35daec;
   bottom: 0;
@@ -33,4 +36,8 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -999;
+}
+
+.link {
+  @apply md:p-6 p-4 hover:bg-slate-300;
 }

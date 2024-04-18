@@ -27,8 +27,11 @@ export function usePortfolioDispatch() {
 
 const portfolioReducer = (state, action) => {
   switch (action.type) {
-    case "modifyPose": {
+    case "updatePoseState": {
       return { ...state, womanPose: action.womanPose };
+    }
+    case "updatePoseChangingState": {
+      return { ...state, poseChanging: action.poseChanging };
     }
     case "updatePageLoadedState": {
       return { ...state, pageLoaded: action.pageLoaded };
@@ -44,6 +47,7 @@ const portfolioReducer = (state, action) => {
 
 const initialState = {
   womanPose: "Pose_0",
+  poseChanging: false,
   pageLoaded: false,
   quoteFinished: false,
 };
