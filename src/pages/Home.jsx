@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { usePortfolioDispatch } from "../context/PortfolioContext";
 import HomeScene from "../scenes/HomeScene";
 import Loader from "../components/Loader/Loader";
+import { Canvas } from "@react-three/fiber";
 
 export default function Home() {
   const dispatch = usePortfolioDispatch();
@@ -43,8 +44,16 @@ export default function Home() {
           “Sur des pensers nouveaux, faisons des vers antiques”
         </p>
       </div>
-
-      <HomeScene />
+      <div className="canvas">
+        <Canvas
+          eventSource={document.getElementById("root")}
+          eventPrefix="client"
+          shadows
+          camera={{ zoom: 15 }}
+        >
+          <HomeScene />
+        </Canvas>
+      </div>
     </main>
   );
 }
