@@ -27,10 +27,10 @@ export default function HomeScene() {
         position={[0, 0, -0.5]}
         material={new CustomToonMaterial({ red: 0, blue: 0.76, green: 0.85 })}
       >
-        <planeGeometry attach="geometry" />
+        <planeGeometry args={[width, height]} />
       </mesh>
 
-      <OrbitControls />
+      {!import.meta.env.PROD && <OrbitControls />}
       <ambientLight />
       <TrackingLight />
     </>
