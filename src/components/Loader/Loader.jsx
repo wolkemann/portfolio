@@ -12,14 +12,15 @@ export default function Loader() {
   const dispatch = usePortfolioDispatch();
   const { progress } = useProgress();
 
+  /*
   useEffect(() => {
     if (progress === 100) {
       dispatch({ type: "updatePageLoadedState", pageLoaded: true });
     }
   }, [progress]);
-
+*/
   return (
-    !quoteFinished && (
+    false && (
       <div className=" z-[999] fixed w-screen h-screen bg-backgroundColor md:p-10">
         {pageLoaded && <Typewriter />}
       </div>
