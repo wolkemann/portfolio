@@ -35,7 +35,13 @@ export default function Sidebar() {
             About me
           </li>
         </NavLink>
-        <li className="link">Projects</li>
+        <li
+          className="link"
+          onMouseEnter={() => handleMouseHover("Pose_2")}
+          onMouseLeave={() => handleMouseHover("Pose_0")}
+        >
+          Projects
+        </li>
         <li className="link">Blog</li>
       </ul>
     </nav>

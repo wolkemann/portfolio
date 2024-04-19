@@ -13,14 +13,10 @@ import { Outlines, useGLTF } from "@react-three/drei";
 import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
 import { usePortfolio } from "../../context/PortfolioContext";
 import { setwomanPoses } from "./setWomanPoses";
-import { useBonesManipulation } from "../../threeUtils/useBonesManipulation";
 
 export function Woman(props) {
   const { womanPose } = usePortfolio();
   const { nodes, materials } = useGLTF("woman/scene-transformed.glb");
-  const gg = useBonesManipulation();
-
-  console.log(gg);
 
   useLayoutEffect(() => {
     setwomanPoses(womanPose, nodes);

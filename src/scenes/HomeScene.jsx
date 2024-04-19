@@ -25,7 +25,10 @@ export default function HomeScene() {
 
   return (
     <>
-      <group position={[0, 0, 0]} rotation={setSceneCoords(womanPose)}>
+      <group
+        position={setSceneCoords(womanPose).position}
+        rotation={setSceneCoords(womanPose).rotation}
+      >
         <Woman position={[0, -0.95, 0.0]} />
         <Lentes scale={0.0225} />
       </group>
