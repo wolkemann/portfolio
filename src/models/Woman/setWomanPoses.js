@@ -4,7 +4,7 @@ export const setwomanPoses = (pose, nodes) => {
   switch (pose) {
     /**
      *
-     *  Pose on the side
+     *  Initial pose: Pose on the side
      *
      */
     case "Pose_0": {
@@ -16,7 +16,7 @@ export const setwomanPoses = (pose, nodes) => {
     }
     /**
      *
-     *  Right hand on the head and left hand on the chest
+     *  Sidebar - About me: Right hand on the head and left hand on the chest
      *
      */
     case "Pose_1": {
@@ -67,7 +67,7 @@ export const setwomanPoses = (pose, nodes) => {
     }
     /**
      *
-     *  Fuck you owner
+     *  Name mouseover: fuck you owner
      *
      */
     case "Pose_2": {
@@ -112,10 +112,11 @@ export const setwomanPoses = (pose, nodes) => {
     }
     /**
      *
-     *  Foot crossed into leg
+     * French quote mouseover: Foot crossed into leg
      *
      */
     case "Pose_3": {
+      initialWomanPose(nodes);
       nodes["mixamorigLeftUpLeg_055"].rotation.x = 0.072;
       nodes["mixamorigLeftUpLeg_055"].rotation.z = -3.192;
       nodes["mixamorigLeftFoot_057"].rotation.x = 0.948;
@@ -129,6 +130,74 @@ export const setwomanPoses = (pose, nodes) => {
       nodes["mixamorigRightFoot_062"].rotation.z = 0.391;
       nodes["mixamorigRightToeBase_063"].rotation.x = 1.187;
       nodes["mixamorigRightToeBase_063"].rotation.y = -0.246;
+      break;
+    }
+    /**
+     *
+     * Sidebar - projects
+     *
+     */
+    case "Pose_4": {
+      initialWomanPose(nodes);
+      nodes["mixamorigLeftShoulder_08"].rotation.x = 1.346;
+      nodes["mixamorigLeftShoulder_08"].rotation.y = -0.724;
+      nodes["mixamorigLeftShoulder_08"].rotation.z = -1.998;
+      nodes["mixamorigRightShoulder_032"].rotation.y = 0.231;
+      nodes["mixamorigRightShoulder_032"].rotation.z = 1.266;
+      nodes["mixamorigRightArm_033"].rotation.x = 1.266;
+      break;
+    }
+
+    case "Pose_5": {
+      initialWomanPose(nodes);
+
+      nodes["mixamorigHips_01"].rotation.x = -0.167;
+
+      nodes["mixamorigSpine_02"].rotation.x = 1.346;
+
+      nodes["mixamorigNeck_05"].rotation.x = -0.246;
+
+      nodes["mixamorigHead_06"].rotation.x = -0.644;
+
+      nodes["mixamorigLeftShoulder_08"].rotation.x = 0.868;
+
+      nodes["mixamorigLeftArm_09"].rotation.z = 0.709;
+
+      nodes["mixamorigLeftForeArm_010"].rotation.x = 0.072;
+      nodes["mixamorigLeftForeArm_010"].rotation.y = -0.246;
+      nodes["mixamorigLeftForeArm_010"].rotation.z = 2.54;
+
+      nodes["mixamorigRightShoulder_032"].rotation.x = 1.107;
+      nodes["mixamorigRightShoulder_032"].rotation.y = 0.63;
+      break;
+    }
+    case "Pose_6": {
+      initialWomanPose(nodes);
+      nodes["mixamorigLeftShoulder_08"].rotation.x = 1.426;
+
+      nodes["mixamorigLeftArm_09"].rotation.y = 1.426;
+      nodes["mixamorigLeftArm_09"].rotation.z = 0.63;
+
+      nodes["mixamorigLeftForeArm_010"].rotation.y = 0.152;
+      nodes["mixamorigLeftForeArm_010"].rotation.z = 0.55;
+
+      nodes["mixamorigRightShoulder_032"].rotation.x = 0.152;
+      nodes["mixamorigRightShoulder_032"].rotation.y = 0.152;
+
+      nodes["mixamorigRightArm_033"].rotation.x = 1.585;
+      nodes["mixamorigRightArm_033"].rotation.y = -1.52;
+
+      nodes["mixamorigRightHand_035"].rotation.x = -1.043;
+      nodes["mixamorigRightHand_035"].rotation.y = -0.246;
+      nodes["mixamorigRightHand_035"].rotation.z = -0.167;
+
+      nodes["mixamorigRightHandThumb1_036"].rotation.x = -0.565;
+      nodes["mixamorigRightHandThumb1_036"].rotation.y = 0.072;
+      nodes["mixamorigRightHandThumb1_036"].rotation.z = -0.804;
+
+      nodes["mixamorigRightHandIndex1_040"].rotation.z = -0.406;
+
+      nodes["mixamorigRightHandPinky1_051"].rotation.z = 0.311;
       break;
     }
   }
