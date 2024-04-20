@@ -58,36 +58,44 @@ export const setwomanPoses = (pose, nodes) => {
 
     case "Pose_2": {
       initialWomanPose(nodes);
-      nodes["mixamorigNeck_05"].rotation.x = 0.311;
+      nodes["mixamorigSpine_02"].rotation.x = 0.152;
+      nodes["mixamorigSpine_02"].rotation.y = -0.007;
+      nodes["mixamorigSpine_02"].rotation.z = 0;
+
+      nodes["mixamorigSpine1_03"].rotation.x = 0;
+      nodes["mixamorigSpine1_03"].rotation.y = -0.406;
+      nodes["mixamorigSpine1_03"].rotation.z = 0;
+
+      nodes["mixamorigNeck_05"].rotation.x = 0.152;
       nodes["mixamorigNeck_05"].rotation.y = -0.406;
       nodes["mixamorigNeck_05"].rotation.z = 0;
-      nodes["mixamorigLeftShoulder_08"].rotation.x = 0.609;
+      nodes["mixamorigLeftShoulder_08"].rotation.x = -4.068;
       nodes["mixamorigLeftShoulder_08"].rotation.y = -0.644;
-      nodes["mixamorigLeftShoulder_08"].rotation.z = -1.759;
-      nodes["mixamorigLeftArm_09"].rotation.x = 0.63;
-      nodes["mixamorigLeftArm_09"].rotation.y = 1.665;
-      nodes["mixamorigLeftArm_09"].rotation.z = 0.072;
-      nodes["mixamorigLeftForeArm_010"].rotation.z = 1.853;
-      nodes["mixamorigLeftHand_011"].rotation.z = 0.072;
-      nodes["mixamorigLeftHandMiddle2_021"].rotation.x = 2.222;
-      nodes["mixamorigLeftHandMiddle3_022"].rotation.x = 2.302;
-      nodes["mixamorigLeftHandRing1_024"].rotation.x = 0.152;
-      nodes["mixamorigLeftHandRing2_025"].rotation.x = 1.824;
-      nodes["mixamorigLeftHandRing3_026"].rotation.x = 2.381;
-      nodes["mixamorigLeftHandPinky2_029"].rotation.x = 2.222;
-      nodes["mixamorigLeftHandPinky3_030"].rotation.z = 0.072;
-      nodes["mixamorigRightShoulder_032"].rotation.z = 1.505;
-      nodes["mixamorigRightArm_033"].rotation.z = -1.043;
-      nodes["mixamorigRightForeArm_034"].rotation.x = 1.824;
-      nodes["mixamorigRightForeArm_034"].rotation.y = 0.231;
-      nodes["mixamorigRightForeArm_034"].rotation.z = -0.724;
-      nodes["mixamorigRightHand_035"].rotation.x = 0.47;
-      nodes["mixamorigRightHand_035"].rotation.y = -0.246;
-      nodes["mixamorigRightHand_035"].rotation.z = 0.072;
+      nodes["mixamorigLeftShoulder_08"].rotation.z = -1.68;
+
+      nodes["mixamorigLeftArm_09"].rotation.x = 1.187;
+
+      nodes["mixamorigLeftForeArm_010"].rotation.x = -0.246;
+      nodes["mixamorigLeftForeArm_010"].rotation.y = -0.167;
+      nodes["mixamorigLeftForeArm_010"].rotation.z = 0.231;
+
+      nodes["mixamorigRightArm_033"].rotation.x = 0.6486689745150157;
+      nodes["mixamorigRightArm_033"].rotation.y = -0.08109214025851075;
+      nodes["mixamorigRightArm_033"].rotation.z = -0.644;
+
+      nodes["mixamorigRightForeArm_034"].rotation.x = 0.391;
+      nodes["mixamorigRightForeArm_034"].rotation.y = 0.47;
+      nodes["mixamorigRightForeArm_034"].rotation.z = -1.68;
+
+      nodes["mixamorigRightHand_035"].rotation.x = 0.311;
+      nodes["mixamorigRightHand_035"].rotation.y = 7.238;
+      nodes["mixamorigRightHand_035"].rotation.z = -0.167;
+
       nodes["mixamorigRightHandThumb1_036"].rotation.x = -0.087;
-      nodes["mixamorigRightHandThumb1_036"].rotation.y = -0.963;
+      nodes["mixamorigRightHandThumb1_036"].rotation.y = -1.839;
       nodes["mixamorigRightHandThumb2_037"].rotation.x = 0.391;
-      nodes["mixamorigRightHandThumb3_038"].rotation.x = 0.55;
+      nodes["mixamorigRightHandThumb3_038"].rotation.x = 0.789;
+      nodes["mixamorigRightHandThumb3_038"].rotation.y = -0.167;
       nodes["mixamorigRightHandIndex2_041"].rotation.x = 2.142;
       nodes["mixamorigRightHandIndex3_042"].rotation.x = 1.585;
       nodes["mixamorigRightHandRing2_048"].rotation.x = 1.983;

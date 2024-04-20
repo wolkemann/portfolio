@@ -10,7 +10,7 @@ export const setLentesPoses = (pose, nodes) => {
       return { position: [0, 0.179, 0.018], rotation: [-0.4, 0, 0] };
     }
     case "Pose_2": {
-      return { position: [-0.04, 0.132, 0.08], rotation: [0.2, -0.4, 0] };
+      return { position: [-0.08, 0.124, 0.132], rotation: [0.3, -0.8, 0.05] };
     }
     default: {
       return {

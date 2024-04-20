@@ -17,6 +17,7 @@ export default function TrackingLight(props) {
       shadow-mapSize-width={2048}
       shadow-mapSize-height={2048}
       castShadow
+      distance={14}
       {...props}
     />
   );
