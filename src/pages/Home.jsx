@@ -8,6 +8,22 @@ import Sidebar from "../components/Sidebar/Sidebar";
 export default function Home() {
   const dispatch = usePortfolioDispatch();
 
+  const handleMouseHover = (pose) => {
+    dispatch({
+      type: "updatePoseChangingState",
+      poseChanging: true,
+    });
+    setTimeout(() => {
+      dispatch({ type: "updatePoseState", womanPose: pose });
+      setTimeout(() => {
+        dispatch({
+          type: "updatePoseChangingState",
+          poseChanging: false,
+        });
+      }, 100);
+    }, 100);
+  };
+
   return (
     <main>
       <Loader />
@@ -16,7 +32,11 @@ export default function Home() {
         className="md:p-8 md:pt-0 md:w-[768px] md:m-auto 
       h-screen flex flex-col p-5 justify-center"
       >
-        <div className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10">
+        <div
+          className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
+          onMouseEnter={() => handleMouseHover("Pose_2")}
+          onMouseLeave={() => handleMouseHover("Pose_0")}
+        >
           <h1
             className="md:text-[85px] md:text-left 
           text-[45px] text-center blue-500"
@@ -29,6 +49,8 @@ export default function Home() {
         <p
           className="md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:my-0 md:p-10 xl:w-[505px] 
         xl:text-[50px] my-2 text-center"
+          onMouseEnter={() => handleMouseHover("Pose_3")}
+          onMouseLeave={() => handleMouseHover("Pose_0")}
         >
           “Sur des pensers nouveaux, faisons des vers antiques”
         </p>

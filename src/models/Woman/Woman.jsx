@@ -8,7 +8,7 @@ Source: https://sketchfab.com/3d-models/womenfemale-body-base-rigged-45caea510e4
 Title: Women/Female Body Base Rigged
 */
 
-import React, { useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { Outlines, useGLTF } from "@react-three/drei";
 import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
 import { usePortfolio } from "../../context/PortfolioContext";
@@ -18,7 +18,7 @@ export function Woman(props) {
   const { womanPose } = usePortfolio();
   const { nodes, materials } = useGLTF("woman/scene-transformed.glb");
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setwomanPoses(womanPose, nodes);
   }, [womanPose]);
 
