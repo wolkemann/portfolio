@@ -33,13 +33,13 @@ export default function Home() {
       h-screen flex flex-col p-5 justify-center"
       >
         <div
-          className="md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
+          className="mouse-interact md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
           onMouseEnter={() => handleMouseHover("Pose_2")}
           onMouseLeave={() => handleMouseHover("Pose_0")}
         >
           <h1
             className="md:text-[85px] md:text-left 
-          text-[45px] text-center blue-500"
+          text-[45px] text-center"
           >
             Federico Sardo
           </h1>
@@ -47,7 +47,7 @@ export default function Home() {
           <h2 className="md:mb-0 text-[25px] my-2">From Hamburg with Love</h2>
         </div>
         <p
-          className="md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:my-0 md:p-10 xl:w-[505px] 
+          className="mouse-interact md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:my-0 md:p-10 xl:w-[505px] 
         xl:text-[50px] my-2 text-center"
           onMouseEnter={() => handleMouseHover("Pose_3")}
           onMouseLeave={() => handleMouseHover("Pose_0")}
