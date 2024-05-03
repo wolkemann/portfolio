@@ -14,6 +14,7 @@ function Root() {
       </Routes>
     </Router>
     {!isMobile &&<AnimatedCursor
+    showSystemCursor
     innerSize={0}
     outerSize={55}
     outerScale={3}
