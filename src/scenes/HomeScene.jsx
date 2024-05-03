@@ -7,7 +7,7 @@ import { Lentes } from "../models/Lentes/Lentes";
 import { setSceneCoords } from "../threeUtils/setSceneCoords";
 import { usePortfolio } from "../context/PortfolioContext";
 
-import { EffectComposer, Glitch } from "@react-three/postprocessing";
+import { ChromaticAberration, EffectComposer, Glitch } from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 import setLightCoords from "../threeUtils/setLightCoords";
 
@@ -26,10 +26,12 @@ export default function HomeScene() {
       </group>
 
       <ambientLight />
-      <directionalLight position={setLightCoords(womanPose)} intensity={0.6} />
+      <directionalLight position={setLightCoords(womanPose)}  intensity={0.6} />
       {
         //<TrackingLight />
       }
+
+      <Background position={[0, 0, -1]} />
 
       <EffectComposer>
         <Glitch
@@ -40,8 +42,18 @@ export default function HomeScene() {
           active={poseChanging} // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
           ratio={0.85} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
         />
+        {poseChanging && <ChromaticAberration
+         offset={[0.01, 0.00]} // color offset
+         /> }
       </EffectComposer>
       {!import.meta.env.PROD && <OrbitControls />}
     </>
   );
+}
+
+const Background = ({...props}) => {
+  return <mesh {...props}>
+    <planeGeometry args={[100,100]} />
+    <meshBasicMaterial color={'#35daec'} />
+  </mesh>
 }
