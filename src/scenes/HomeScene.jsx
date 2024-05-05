@@ -7,9 +7,15 @@ import { Lentes } from "../models/Lentes/Lentes";
 import { setSceneCoords } from "../threeUtils/setSceneCoords";
 import { usePortfolio } from "../context/PortfolioContext";
 
-import { ChromaticAberration, EffectComposer, Glitch } from "@react-three/postprocessing";
+import {
+  ChromaticAberration,
+  EffectComposer,
+  Glitch,
+  Noise,
+} from "@react-three/postprocessing";
 import { GlitchMode } from "postprocessing";
 import setLightCoords from "../threeUtils/setLightCoords";
+import Balls from "../models/Ball/Ball";
 
 export default function HomeScene() {
   const [width, height] = useWindowSize();
@@ -25,13 +31,12 @@ export default function HomeScene() {
         <Lentes scale={0.0225} />
       </group>
 
-      <ambientLight />
-      <directionalLight position={setLightCoords(womanPose)}  intensity={0.6} />
-      {
-        //<TrackingLight />
-      }
+      <Balls />
 
-      <Background position={[0, 0, -1]} />
+      <ambientLight />
+      <directionalLight position={setLightCoords(womanPose)} intensity={0.4} />
+
+      <Background position={[0, 0, -5]} />
 
       <EffectComposer>
         <Glitch
@@ -42,18 +47,23 @@ export default function HomeScene() {
           active={poseChanging} // turn on/off the effect (switches between "mode" prop and GlitchMode.DISABLED)
           ratio={0.85} // Threshold for strong glitches, 0 - no weak glitches, 1 - no strong glitches.
         />
-        {poseChanging && <ChromaticAberration
-         offset={[0.01, 0.00]} // color offset
-         /> }
+        {poseChanging && (
+          <ChromaticAberration
+            offset={[0.01, 0.0]} // color offset
+          />
+        )}
+        <Noise opacity={0.3} />
       </EffectComposer>
       {!import.meta.env.PROD && <OrbitControls />}
     </>
   );
 }
 
-const Background = ({...props}) => {
-  return <mesh {...props}>
-    <planeGeometry args={[100,100]} />
-    <meshBasicMaterial color={'#35daec'} />
-  </mesh>
-}
+const Background = ({ ...props }) => {
+  return (
+    <mesh {...props} receiveShadow>
+      <planeGeometry args={[10, 10]} />
+      <meshBasicMaterial color={0x35daec} />
+    </mesh>
+  );
+};

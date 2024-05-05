@@ -21,38 +21,46 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className="md:text-[20px] md:bg-transparent md:block md:top-0 fixed bottom-0 w-screen bg-backgroundColor">
-      <ul className="md:justify-start flex justify-between">
-        <NavLink to="/">
-          <li className="link">Home</li>
-        </NavLink>
-        <NavLink to="/about">
-          <li
+    <nav className="md:text-[20px] md:w-[200px] md:bg-transparent xl:block md:top-0 md:p-10 fixed bottom-0 w-screen bg-backgroundColor">
+      <ul className="md:justify-start flex md:flex-col md:gap-3 justify-between">
+        <li>
+          <NavLink to="/" className="link">
+            Home
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
             className="link"
             onMouseEnter={() => handleMouseHover("Pose_1")}
             onMouseLeave={() => handleMouseHover("Pose_0")}
+            to="/about"
           >
             About me
-          </li>
-        </NavLink>
-        <NavLink to="/projects">
-          <li
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
             className="link"
             onMouseEnter={() => handleMouseHover("Pose_4")}
             onMouseLeave={() => handleMouseHover("Pose_0")}
+            to="/projects"
           >
             Projects
-          </li>
-        </NavLink>
-        <NavLink to="/blog">
-          <li
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink
             className="link"
             onMouseEnter={() => handleMouseHover("Pose_6")}
             onMouseLeave={() => handleMouseHover("Pose_0")}
+            to="/blog"
           >
             Blog
-          </li>
-        </NavLink>
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

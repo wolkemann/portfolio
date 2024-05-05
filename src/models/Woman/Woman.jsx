@@ -33,7 +33,7 @@ export function Woman(props) {
         position={[0, -0.008, 0]}
         scale={0.161}
       >
-        <Outlines thickness={2.5} color="#b200b2" screenspace />
+        <Outlines thickness={2.5} color="black" screenspace />
       </skinnedMesh>
     </group>
   );

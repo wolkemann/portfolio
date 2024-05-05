@@ -24,7 +24,7 @@ body,
 }
 
 .placeholder {
-  background-color: #e1fcff;
+  background-color: rgb(31, 22, 132);
 }
 
 .canvas {
@@ -40,5 +40,6 @@ body,
 }
 
 .link {
-  @apply md:p-6 p-4 hover:bg-slate-300;
+  @apply md:p-4 md:py-2 md:text-[16px];
+  background-color: #f4ff61;
 }
