@@ -1,6 +1,5 @@
 import { OrbitControls } from "@react-three/drei";
 
-import useWindowSize from "../hooks/useWindowSize";
 import TrackingLight from "../threeUtils/TrackingLight";
 import { Woman } from "../models/Woman/Woman";
 import { Lentes } from "../models/Lentes/Lentes";
@@ -18,7 +17,6 @@ import setLightCoords from "../threeUtils/setLightCoords";
 import Balls from "../models/Ball/Ball";
 
 export default function HomeScene() {
-  const [width, height] = useWindowSize();
   const { womanPose, poseChanging } = usePortfolio();
 
   return (

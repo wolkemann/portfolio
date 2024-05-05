@@ -6,12 +6,12 @@ import { usePortfolioDispatch } from "../../context/PortfolioContext";
 import getRandomQuotes from "../../utils/quotes";
 
 export default function Typewriter() {
-  const [quoteText] = useState(getRandomQuotes())
+  const [quoteText] = useState(getRandomQuotes());
   const dispatch = usePortfolioDispatch();
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const displayText = useTransform(rounded, (latest) =>
-  quoteText.slice(0, latest)
+    quoteText.slice(0, latest)
   );
 
   useEffect(() => {
@@ -24,7 +24,6 @@ export default function Typewriter() {
         dispatch({ type: "updateQuoteFinishedState", quoteFinished: true });
       },
     });
-   
   }, [quoteText, count, dispatch]);
 
   return <motion.span>{displayText}</motion.span>;
