@@ -64,7 +64,7 @@ export default function About() {
           shadows
           camera={{ zoom: 15 }}
         >
-          <HomeScene />
+          
         </Canvas>
       </div>
     </main>
