@@ -1,23 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { usePortfolioDispatch } from "../../context/PortfolioContext";
 
 export default function Sidebar() {
   const dispatch = usePortfolioDispatch();
+  const { pathname } = useLocation();
 
   const handleMouseHover = (pose) => {
-    dispatch({
-      type: "updatePoseChangingState",
-      poseChanging: true,
-    });
-    setTimeout(() => {
-      dispatch({ type: "updatePoseState", womanPose: pose });
+    if (pathname === "/") {
+      dispatch({
+        type: "updatePoseChangingState",
+        poseChanging: true,
+      });
       setTimeout(() => {
-        dispatch({
-          type: "updatePoseChangingState",
-          poseChanging: false,
-        });
+        dispatch({ type: "updatePoseState", womanPose: pose });
+        setTimeout(() => {
+          dispatch({
+            type: "updatePoseChangingState",
+            poseChanging: false,
+          });
+        }, 100);
       }, 100);
-    }, 100);
+    }
   };
 
   return (
