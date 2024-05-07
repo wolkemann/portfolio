@@ -1,7 +1,9 @@
+import { useDetectGPU } from "@react-three/drei";
 import AnimatedCursor from "react-animated-cursor";
 
 export default function Cursor() {
-    return <AnimatedCursor showSystemCursor
+    const { isMobile } = useDetectGPU();
+    return !isMobile &&(<AnimatedCursor showSystemCursor
     innerSize={0}
     outerSize={55}
     outerScale={3}
@@ -11,5 +13,5 @@ export default function Cursor() {
       background: "#e9afe3",
       mixBlendMode: "difference",
     }}
-    clickables={["a", ".mouse-interact"]} />
+    clickables={["a", ".mouse-interact"]} />)
 }
