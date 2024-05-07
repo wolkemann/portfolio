@@ -39,6 +39,9 @@ const portfolioReducer = (state, action) => {
     case "updateQuoteFinishedState": {
       return { ...state, quoteFinished: action.quoteFinished };
     }
+    case "updatePageTransitioningState": {
+      return { ...state, pageTransitioning: action.pageTransitioning };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
@@ -50,4 +53,5 @@ const initialState = {
   poseChanging: false,
   pageLoaded: false,
   quoteFinished: false,
+  pageTransitioning: false,
 };
