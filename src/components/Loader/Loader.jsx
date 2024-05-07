@@ -22,12 +22,12 @@ export default function Loader() {
   }, [progress, dispatch]);
 
   return (
-    !animationCompleted && (
+    (
       <motion.div
         animate={quoteFinished ? "loaded" : false}
         exit="closing"
         variants={containerVariants}
-        className="z-[999] fixed w-screen h-screen"
+        className={`z-[${animationCompleted? '-999' : '999'}] fixed w-screen h-screen`}
       >
         {pageLoaded && (
           <div className="md:text-[65px] absolute">
@@ -68,6 +68,7 @@ export default function Loader() {
 const containerVariants = {
   closing: {
     opacity: 1,
+    zIndex: 999,
     transition: {
       type: "Ease",
       duration: 1,
@@ -94,4 +95,11 @@ const tileVariants = {
       duration: 1,
     },
   }),
+  closing: (width) => ({
+    x: 0,
+    transition: {
+      type: "Ease",
+      duration: 1,
+    },
+  })
 };

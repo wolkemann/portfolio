@@ -4,6 +4,7 @@ import HomeScene from "../scenes/HomeScene";
 import Loader from "../components/Loader/Loader";
 import { Canvas } from "@react-three/fiber";
 import Sidebar from "../components/Sidebar/Sidebar";
+import Cursor from "../components/Cursor/Cursor";
 
 export default function Home() {
   const dispatch = usePortfolioDispatch();
@@ -26,6 +27,7 @@ export default function Home() {
 
   return (
     <main>
+      <Cursor />
       <Loader />
       <Sidebar />
       <div
