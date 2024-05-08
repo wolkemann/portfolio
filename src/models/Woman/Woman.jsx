@@ -13,9 +13,9 @@ import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
 import { usePortfolio } from "../../context/PortfolioContext";
 import { setwomanPoses } from "./setWomanPoses";
 
-export function Woman(props) {
+export function Woman({shaderColor, ...props}) {
   const { womanPose } = usePortfolio();
-  const { nodes, materials } = useGLTF("woman/scene-transformed.glb");
+  const { nodes } = useGLTF("woman/scene-transformed.glb");
 
   useEffect(() => {
     setwomanPoses(womanPose, nodes);
@@ -27,7 +27,7 @@ export function Woman(props) {
       <skinnedMesh
         castShadow
         geometry={nodes.Object_85.geometry}
-        material={new CustomToonMaterial({ red: 170, blue: 170, green: 0 })}
+        material={new CustomToonMaterial(shaderColor? shaderColor : { red: 170, blue: 170, green: 0 })}
         skeleton={nodes.Object_85.skeleton}
         position={[0, -0.008, 0]}
         scale={0.161}
