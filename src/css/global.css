@@ -54,14 +54,13 @@ body,
 }
 
 .about-article {
-  @apply relative md:w-[900px] md:py-10 min-h-screen m-auto flex flex-col justify-center;
+  @apply relative md:w-[768px] xl:w-[900px] md:py-10 min-h-screen m-auto flex justify-center;
 }
 
 .about-article-title {
-  @apply p-5 md:p-10 text-[30px] md:text-[55px] about-title-color;
+  @apply m-5 md:m-10 text-[30px] md:text-[55px] about-title-color;
 }
 
-
 .about-p {
-  @apply p-5 md:p-10 text-gray-100 text-[20px] md:text-[25px];
+  @apply m-5 md:m-10 text-gray-100 text-[20px] md:text-[25px];
 }

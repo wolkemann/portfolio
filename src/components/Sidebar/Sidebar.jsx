@@ -24,7 +24,7 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className="md:text-[20px] md:w-[200px] md:bg-transparent xl:block md:top-0 md:p-10 fixed bottom-0 w-screen bg-backgroundColor">
+    <nav className=" z-[998] md:text-[20px] md:w-[200px] md:bg-transparent xl:block md:top-0 md:p-10 fixed bottom-0 w-screen bg-backgroundColor">
       <ul className="md:justify-start flex md:flex-col md:gap-3 justify-between">
         <li>
           <NavLink to="/" className="link">
