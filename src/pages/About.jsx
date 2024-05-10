@@ -1,7 +1,3 @@
-import {
-  usePortfolio,
-  usePortfolioDispatch,
-} from "../context/PortfolioContext";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 import Loader from "../components/Loader/Loader";
@@ -9,11 +5,13 @@ import { Canvas } from "@react-three/fiber";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Cursor from "../components/Cursor/Cursor";
 import AboutScene from "../scenes/AboutScene";
-import { useCallback, useEffect, useRef } from "react";
+import {  useEffect, useRef } from "react";
 import { useScroll } from "@react-three/drei";
+import { WOMAN_POSES } from "../utils/constants";
+import { usePoseChanging } from "../hooks/usePoseChanging";
 
 export default function About() {
-  const dispatch = usePortfolioDispatch();
+  const { updatePose } = usePoseChanging();
 
   const cvRef = useRef(null);
   const cvInView = useInView(cvRef);
@@ -21,31 +19,15 @@ export default function About() {
   const aboutRef = useRef(null);
   const aboutInView = useInView(aboutRef);
 
-  const handleMouseHover = useCallback((pose) => {
-    dispatch({
-      type: "updatePoseChangingState",
-      poseChanging: true,
-    });
-    setTimeout(() => {
-      dispatch({ type: "updatePoseState", womanPose: pose });
-      setTimeout(() => {
-        dispatch({
-          type: "updatePoseChangingState",
-          poseChanging: false,
-        });
-      }, 100);
-    }, 100);
-},[dispatch]);
-
   useEffect(() => {
     if(aboutInView) {
-      handleMouseHover('Pose_0')
+      updatePose(WOMAN_POSES.DEFAULT_POSE)
     }
     if(cvInView) {
-      handleMouseHover('Pose_4')
+      updatePose(WOMAN_POSES.SIDEBAR_PROJECTS_POSE)
     }
 
-  }, [cvInView, aboutInView, dispatch, handleMouseHover])
+  }, [cvInView, aboutInView, updatePose])
 
   return (
     <main>
