@@ -1,15 +1,17 @@
-export const setLentesPoses = (pose, nodes) => {
+import { WOMAN_POSES } from "../../utils/constants";
+
+export const setLentesPoses = (pose) => {
   switch (pose) {
-    case "Pose_0": {
+    case WOMAN_POSES.DEFAULT_POSE: {
       return {
         position: [0, 0.155, 0.063],
         rotation: [0, 0, 0],
       };
     }
-    case "Pose_1": {
+    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
       return { position: [0, 0.179, 0.018], rotation: [-0.4, 0, 0] };
     }
-    case "Pose_2": {
+    case WOMAN_POSES.HOME_NAME_POSE: {
       return { position: [-0.08, 0.124, 0.132], rotation: [0.3, -0.8, 0.05] };
     }
     case "Pose_5": {

@@ -9,11 +9,43 @@ import { Canvas } from "@react-three/fiber";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Cursor from "../components/Cursor/Cursor";
 import AboutScene from "../scenes/AboutScene";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { useScroll } from "@react-three/drei";
 
 export default function About() {
   const dispatch = usePortfolioDispatch();
+
+  const cvRef = useRef(null);
+  const cvInView = useInView(cvRef);
+
+  const aboutRef = useRef(null);
+  const aboutInView = useInView(aboutRef);
+
+  const handleMouseHover = useCallback((pose) => {
+    dispatch({
+      type: "updatePoseChangingState",
+      poseChanging: true,
+    });
+    setTimeout(() => {
+      dispatch({ type: "updatePoseState", womanPose: pose });
+      setTimeout(() => {
+        dispatch({
+          type: "updatePoseChangingState",
+          poseChanging: false,
+        });
+      }, 100);
+    }, 100);
+},[dispatch]);
+
+  useEffect(() => {
+    if(aboutInView) {
+      handleMouseHover('Pose_0')
+    }
+    if(cvInView) {
+      handleMouseHover('Pose_4')
+    }
+
+  }, [cvInView, aboutInView, dispatch, handleMouseHover])
 
   return (
     <main>
@@ -21,13 +53,12 @@ export default function About() {
       <Loader />
       <Sidebar />
 
-      <article className="w-screen h-screen flex">
-        <h1 className="m-auto about-title-size about-title-color">
-          About me<span className="text-gray-200">.</span>
+      <article ref={aboutRef} className="min-w-screen min-h-screen flex flex-col">
+        <h1 className="min-w-screen min-h-screen flex about-title-size about-title-color">
+          <span className='m-auto'>About me<span className="text-gray-200">.</span></span>
         </h1>
-      </article>
-      <div className="h-screen" />
-      <article className="about-article flex-col">
+        <div className="h-screen" />
+      <section className="about-article flex-col">
         <h3 className="about-article-title">From Italy to Germany</h3>
         <p className="about-p">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim labore
@@ -35,15 +66,18 @@ export default function About() {
           harum assumenda temporibus tempora id, optio unde natus veritatis
           nihil. Aliquid?
         </p>
+      </section>
       </article>
       <div className="h-screen" />
-      <article className="w-screen h-screen flex">
-        <h2 className="about-title-size about-title-color m-auto">
-          Curriculum Vitae<span className="text-gray-200">.</span>
+      
+      <article className="min-w-screen min-h-screen flex flex-col" ref={cvRef}>
+        <h2 className="min-w-screen min-h-screen flex about-title-size about-title-color">
+        <span className='m-auto'>Curriculum Vitae<span className="text-gray-200">.</span></span>
         </h2>
-      </article>
-      <div className="h-screen" />
-      <article className="about-article flex-col md:flex-row md:gap-10">
+
+        <div className="h-screen" />
+
+        <section className="about-article flex-col md:flex-row md:gap-10">
         <section className="md:w-[70%]">
           <h3 className="about-article-title md:m-0 md:text-[40px] underline underline-offset-8 decoration-gray-100">
             Work Experience<span className="text-gray-200">.</span>
@@ -78,11 +112,20 @@ export default function About() {
           </ul>
         </section>
         <section className="md:w-[30%]">
-          <h3 className="about-article-title md:m-0 md:text-[30px] underline underline-offset-8 decoration-gray-100">
+          <h3 className="about-article-title md:m-0 md:text-[30px] md:text-right underline underline-offset-8 decoration-gray-100">
             Tech stack<span className="text-gray-200">.</span>
           </h3>
+          <ul className="about-p md:mx-0 md:text-[20px] md:text-right">
+            <li>Typescript</li>
+            <li>React</li>
+          </ul>
         </section>
+      </section>
       </article>
+
+
+
+
       <div className="canvas">
         <Canvas
           eventSource={document.getElementById("root")}
@@ -99,7 +142,7 @@ export default function About() {
 
 const workExperience = [
   {
-    date: "2022 - Present",
+    date: "Jul 2022 - Present",
     location: "Hamburg",
     company: "VistaJet Gmbh",
     job: "Frontend Web Developer",
@@ -109,7 +152,7 @@ const workExperience = [
     ],
   },
   {
-    date: "2020 - 2022",
+    date: "Jan 2022 - Apr 2022",
     location: "Remote",
     company: "Neuefische Gmbh",
     job: "Fullstack Web Developer",

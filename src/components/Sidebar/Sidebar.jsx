@@ -1,5 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { usePortfolioDispatch } from "../../context/PortfolioContext";
+import { WOMAN_POSES } from "../../utils/constants";
 
 export default function Sidebar() {
   const dispatch = usePortfolioDispatch();
@@ -24,7 +25,7 @@ export default function Sidebar() {
   };
 
   return (
-    <nav className=" z-[998] md:text-[20px] md:w-[200px] md:bg-transparent xl:block md:top-0 md:p-10 fixed bottom-0 w-screen bg-backgroundColor">
+    <nav className="z-[998] md:text-[20px] md:w-[200px] md:h-fit md:bg-transparent xl:block md:top-0 md:p-10 fixed bottom-0 w-screen bg-backgroundColor">
       <ul className="md:justify-start flex md:flex-col md:gap-3 justify-between">
         <li>
           <NavLink to="/" className="link">
@@ -35,8 +36,8 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => handleMouseHover("Pose_1")}
-            onMouseLeave={() => handleMouseHover("Pose_0")}
+            onMouseEnter={() => handleMouseHover(WOMAN_POSES.SIDEBAR_ABOUT_POSE)}
+            onMouseLeave={() => handleMouseHover(WOMAN_POSES.DEFAULT_POSE)}
             to="/about"
           >
             About me
@@ -46,8 +47,8 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => handleMouseHover("Pose_4")}
-            onMouseLeave={() => handleMouseHover("Pose_0")}
+            onMouseEnter={() => handleMouseHover(WOMAN_POSES.SIDEBAR_PROJECTS_POSE)}
+            onMouseLeave={() => handleMouseHover(WOMAN_POSES.DEFAULT_POSE)}
             to="/projects"
           >
             Projects
@@ -57,8 +58,8 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => handleMouseHover("Pose_6")}
-            onMouseLeave={() => handleMouseHover("Pose_0")}
+            onMouseEnter={() => handleMouseHover(WOMAN_POSES.SIDEBAR_BLOG_POSE)}
+            onMouseLeave={() => handleMouseHover(WOMAN_POSES.DEFAULT_POSE)}
             to="/blog"
           >
             Blog
