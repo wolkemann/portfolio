@@ -7,6 +7,7 @@ export default {
     colors: {
       ...colors,
       backgroundColor: "#35daec",
+      "about-title": "#ff61c6",
     },
     extend: {},
   },

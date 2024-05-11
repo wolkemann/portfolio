@@ -11,7 +11,7 @@ import getRandomQuotes from "../../utils/quotes";
 export default function Typewriter() {
   const { quoteFinished } = usePortfolio();
   const [quoteText] = useState(getRandomQuotes());
-  const [quoteX, setQuotex] = useState()
+  const [quoteX, setQuotex] = useState();
   const dispatch = usePortfolioDispatch();
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
@@ -19,16 +19,19 @@ export default function Typewriter() {
     quoteText.slice(0, latest)
   );
 
-  useEffect(()=> {
-    if(document.getElementById('fakeQuote')?.getBoundingClientRect()?.left) {
-      setQuotex(document.getElementById('fakeQuote')?.getBoundingClientRect()?.left);
+  useEffect(() => {
+    if (document.getElementById("fakeQuote")?.getBoundingClientRect()?.left) {
+      setQuotex(
+        document.getElementById("fakeQuote")?.getBoundingClientRect()?.left
+      );
     }
-  }, [quoteText])
+  }, [quoteText]);
 
   useEffect(() => {
     animate(count, quoteText.length, {
       type: "tween",
       duration: getReadTime(quoteText),
+      delay: 0.5,
       ease: "easeInOut",
       onComplete: () => {
         setTimeout(
@@ -43,10 +46,15 @@ export default function Typewriter() {
   return (
     !quoteFinished && (
       <div className="w-screen h-screen">
-        <span id='fakeQuote' className="opacity-0 absolute left-[50%] translate-x-[-50%]">
+        <span
+          id="fakeQuote"
+          className="opacity-0 absolute left-[50%] translate-x-[-50%]"
+        >
           {quoteText}
         </span>
-        <motion.span style={{left: quoteX}} className={`absolute`}>{displayText}</motion.span>
+        <motion.span style={{ left: quoteX }} className={`absolute`}>
+          {displayText}
+        </motion.span>
       </div>
     )
   );

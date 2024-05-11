@@ -1,29 +1,13 @@
-import { NavLink } from "react-router-dom";
-import { usePortfolioDispatch } from "../context/PortfolioContext";
 import HomeScene from "../scenes/HomeScene";
 import Loader from "../components/Loader/Loader";
 import { Canvas } from "@react-three/fiber";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Cursor from "../components/Cursor/Cursor";
+import { WOMAN_POSES } from "../utils/constants";
+import { usePoseChanging } from "../hooks/usePoseChanging";
 
 export default function Home() {
-  const dispatch = usePortfolioDispatch();
-
-  const handleMouseHover = (pose) => {
-    dispatch({
-      type: "updatePoseChangingState",
-      poseChanging: true,
-    });
-    setTimeout(() => {
-      dispatch({ type: "updatePoseState", womanPose: pose });
-      setTimeout(() => {
-        dispatch({
-          type: "updatePoseChangingState",
-          poseChanging: false,
-        });
-      }, 100);
-    }, 100);
-  };
+  const { updatePose } = usePoseChanging();
 
   return (
     <main>
@@ -36,8 +20,8 @@ export default function Home() {
       >
         <div
           className="mouse-interact md:fixed md:w-[500px] md:left-0 md:bottom-0 md:p-10"
-          onMouseEnter={() => handleMouseHover("Pose_2")}
-          onMouseLeave={() => handleMouseHover("Pose_0")}
+          onMouseEnter={() => updatePose(WOMAN_POSES.HOME_NAME_POSE)}
+          onMouseLeave={() => updatePose(WOMAN_POSES.DEFAULT_POSE)}
         >
           <h1
             className="md:text-[85px] md:text-left 
@@ -51,8 +35,8 @@ export default function Home() {
         <p
           className="mouse-interact md:fixed md:w-[400px] md:text-[25px] md:bottom-0 md:right-0 md:my-0 md:p-10 xl:w-[505px] 
         xl:text-[50px] my-2 text-center"
-          onMouseEnter={() => handleMouseHover("Pose_3")}
-          onMouseLeave={() => handleMouseHover("Pose_0")}
+          onMouseEnter={() => updatePose(WOMAN_POSES.HOME_QUOTE_POSE)}
+          onMouseLeave={() => updatePose(WOMAN_POSES.DEFAULT_POSE)}
         >
           “Sur des pensers nouveaux, faisons des vers antiques”
         </p>

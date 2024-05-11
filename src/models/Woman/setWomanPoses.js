@@ -1,3 +1,4 @@
+import { WOMAN_POSES } from "../../utils/constants";
 import { initialWomanPose } from "./initialWomanPose";
 
 export const setwomanPoses = (pose, nodes) => {
@@ -7,7 +8,7 @@ export const setwomanPoses = (pose, nodes) => {
      *  Initial pose: Pose on the side
      *
      */
-    case "Pose_0": {
+    case WOMAN_POSES.DEFAULT_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigLeftShoulder_08"].rotation.x = 1.5636573071467672;
       nodes["mixamorigLeftShoulder_08"].rotation.y = -0.75;
@@ -19,7 +20,7 @@ export const setwomanPoses = (pose, nodes) => {
      *  Sidebar - About me: Right hand on the head and left hand on the chest
      *
      */
-    case "Pose_1": {
+    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigSpine1_03"].rotation.x = -0.087;
       nodes["mixamorigNeck_05"].rotation.x = 0.072;
@@ -70,7 +71,7 @@ export const setwomanPoses = (pose, nodes) => {
      *  Name mouseover: fuck you owner
      *
      */
-    case "Pose_2": {
+    case WOMAN_POSES.HOME_NAME_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigSpine_02"].rotation.x = 0.152;
       nodes["mixamorigSpine_02"].rotation.y = -0.007;
@@ -115,7 +116,7 @@ export const setwomanPoses = (pose, nodes) => {
      * French quote mouseover: Foot crossed into leg
      *
      */
-    case "Pose_3": {
+    case WOMAN_POSES.HOME_QUOTE_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigLeftUpLeg_055"].rotation.x = 0.072;
       nodes["mixamorigLeftUpLeg_055"].rotation.z = -3.192;
@@ -137,7 +138,7 @@ export const setwomanPoses = (pose, nodes) => {
      * Sidebar - projects
      *
      */
-    case "Pose_4": {
+    case WOMAN_POSES.SIDEBAR_PROJECTS_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigLeftShoulder_08"].rotation.x = 1.346;
       nodes["mixamorigLeftShoulder_08"].rotation.y = -0.724;
@@ -171,7 +172,7 @@ export const setwomanPoses = (pose, nodes) => {
       nodes["mixamorigRightShoulder_032"].rotation.y = 0.63;
       break;
     }
-    case "Pose_6": {
+    case WOMAN_POSES.SIDEBAR_BLOG_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigLeftShoulder_08"].rotation.x = 1.426;
 

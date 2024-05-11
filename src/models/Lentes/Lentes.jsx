@@ -14,7 +14,7 @@ import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
 import { usePortfolio } from "../../context/PortfolioContext";
 import { setLentesPoses } from "./setLentesPoses";
 
-export function Lentes(props) {
+export function Lentes({glassColor, ...props}) {
   const { womanPose } = usePortfolio();
   const { nodes } = useGLTF("lentes/scene-transformed.glb");
 
@@ -38,7 +38,7 @@ export function Lentes(props) {
         rotation={[Math.PI / 2, 0, 0.017]}
         scale={[1.087, 1.087, 1.099]}
       >
-        <meshToonMaterial color={0x0a0c37ff} />
+        <meshToonMaterial color={glassColor? glassColor : 0x0a0c37ff} />
       </mesh>
       <mesh
         geometry={nodes.Object_10.geometry}

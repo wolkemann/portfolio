@@ -24,7 +24,8 @@ body,
 }
 
 .placeholder {
-  background-color: rgb(31, 22, 132);
+  background-color: #0a0824;
+  background-color: #ff61c6;
 }
 
 .canvas {
@@ -42,4 +43,24 @@ body,
 .link {
   @apply md:p-4 md:py-2 md:text-[16px];
   background-color: #f4ff61;
+}
+
+.about-title-color {
+  @apply font-bold text-about-title;
+}
+
+.about-title-size {
+  @apply text-[50px] text-center md:text-[85px] md:text-left xl:text-[120px];
+}
+
+.about-article {
+  @apply relative md:w-[768px] xl:w-[900px] md:py-10 min-h-screen m-auto flex justify-center;
+}
+
+.about-article-title {
+  @apply m-5 md:m-10 text-[30px] md:text-[55px] about-title-color;
+}
+
+.about-p {
+  @apply m-5 md:m-10 text-gray-100 text-[20px] md:text-[25px];
 }

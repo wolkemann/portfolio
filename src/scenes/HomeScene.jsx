@@ -15,6 +15,7 @@ import {
 import { GlitchMode } from "postprocessing";
 import setLightCoords from "../threeUtils/setLightCoords";
 import Balls from "../models/Ball/Ball";
+import Background from "../models/Background/Background";
 
 export default function HomeScene() {
   const { womanPose, poseChanging } = usePortfolio();
@@ -34,7 +35,7 @@ export default function HomeScene() {
       <ambientLight />
       <directionalLight position={setLightCoords(womanPose)} intensity={0.4} />
 
-      <Background position={[0, 0, -5]} />
+      <Background color={0x35daec} position={[0, 0, -5]} />
 
       <EffectComposer>
         <Glitch
@@ -56,12 +57,3 @@ export default function HomeScene() {
     </>
   );
 }
-
-const Background = ({ ...props }) => {
-  return (
-    <mesh {...props} receiveShadow>
-      <planeGeometry args={[10, 10]} />
-      <meshBasicMaterial color={0x35daec} />
-    </mesh>
-  );
-};

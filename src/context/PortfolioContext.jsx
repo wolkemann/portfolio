@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import getRandomQuotes from "../utils/quotes";
+import { WOMAN_POSES } from "../utils/constants";
 
 const PortfolioContext = createContext(null);
 
@@ -49,7 +49,7 @@ const portfolioReducer = (state, action) => {
 };
 
 const initialState = {
-  womanPose: "Pose_0",
+  womanPose: WOMAN_POSES.DEFAULT_POSE,
   poseChanging: false,
   pageLoaded: false,
   quoteFinished: false,

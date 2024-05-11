@@ -22,46 +22,46 @@ export default function Loader() {
   }, [progress, dispatch]);
 
   return (
-    (
+    <motion.div
+      animate={quoteFinished ? "loaded" : false}
+      exit="closing"
+      variants={containerVariants}
+      className={`${
+        animationCompleted ? "-z-[999]" : "z-[999]"
+      } fixed w-screen h-screen`}
+    >
+      {pageLoaded && (
+        <div className="md:text-[65px] absolute">
+          <Typewriter />
+        </div>
+      )}
       <motion.div
-        animate={quoteFinished ? "loaded" : false}
-        exit="closing"
-        variants={containerVariants}
-        className={`z-[${animationCompleted? '-999' : '999'}] fixed w-screen h-screen`}
-      >
-        {pageLoaded && (
-          <div className="md:text-[65px] absolute">
-            <Typewriter />
-          </div>
-        )}
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          onAnimationComplete={() => setAnimationCompleted(true)}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-      </motion.div>
-    )
+        variants={tileVariants}
+        custom={width}
+        className="z-[999] w-screen h-[20%] bg-backgroundColor"
+      ></motion.div>
+      <motion.div
+        variants={tileVariants}
+        custom={width}
+        className="z-[999] w-screen h-[20%] bg-backgroundColor"
+      ></motion.div>
+      <motion.div
+        variants={tileVariants}
+        custom={width}
+        className="z-[999] w-screen h-[20%] bg-backgroundColor"
+      ></motion.div>
+      <motion.div
+        variants={tileVariants}
+        custom={width}
+        className="z-[999] w-screen h-[20%] bg-backgroundColor"
+      ></motion.div>
+      <motion.div
+        variants={tileVariants}
+        custom={width}
+        onAnimationComplete={() => setAnimationCompleted(true)}
+        className="z-[999] w-screen h-[20%] bg-backgroundColor"
+      ></motion.div>
+    </motion.div>
   );
 }
 
@@ -101,5 +101,5 @@ const tileVariants = {
       type: "Ease",
       duration: 1,
     },
-  })
+  }),
 };

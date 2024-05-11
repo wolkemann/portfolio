@@ -9,8 +9,6 @@ export default class CustomToonMaterial extends MeshToonMaterial {
   constructor(shaderColor = {}, uniforms = {}) {
     super();
 
-    const isShaderDefault = Object.keys(shaderColor).length === 0;
-
     this.uniforms = merge(
       {
         time: {
@@ -25,15 +23,7 @@ export default class CustomToonMaterial extends MeshToonMaterial {
     );
 
     this.vertexShader = vert;
-    this.setShaderColor(
-      isShaderDefault
-        ? {
-            red: 0.31,
-            blue: 0.329,
-            green: 0.867,
-          }
-        : { ...shaderColor }
-    );
+    this.setShaderColor({ ...shaderColor });
 
     this.type = "ShaderMaterial";
   }

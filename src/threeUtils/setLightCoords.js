@@ -1,6 +1,8 @@
+import { WOMAN_POSES } from "../utils/constants";
+
 export default function setLightCoords(pos) {
   switch (pos) {
-    case "Pose_1": {
+    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
       return [-5, 3, -2];
     }
     default: {
