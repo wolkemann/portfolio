@@ -26,9 +26,9 @@ export default function Loader() {
       animate={quoteFinished ? "loaded" : false}
       exit="closing"
       variants={containerVariants}
-      className={`z-[${
-        animationCompleted ? "-999" : "999"
-      }] fixed w-screen h-screen`}
+      className={`${
+        animationCompleted ? "-z-[999]" : "z-[999]"
+      } fixed w-screen h-screen`}
     >
       {pageLoaded && (
         <div className="md:text-[65px] absolute">

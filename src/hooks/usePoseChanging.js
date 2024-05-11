@@ -3,11 +3,11 @@ import { usePortfolioDispatch } from "../context/PortfolioContext";
 import { useMemo } from "react";
 
 export const usePoseChanging = () => {
-    const { pathname } = useLocation();
-    const dispatch = usePortfolioDispatch();
+  const { pathname } = useLocation();
+  const dispatch = usePortfolioDispatch();
 
   const updatePose = (pose) => {
-    if(pose) {
+    if (pose) {
       dispatch({
         type: "updatePoseChangingState",
         poseChanging: true,
@@ -20,12 +20,11 @@ export const usePoseChanging = () => {
             poseChanging: false,
           });
         }, 100);
-      }, 100)
+      }, 100);
     }
   };
 
-  const isHome = useMemo(() => pathname === '/', [pathname])
+  const isHome = useMemo(() => pathname === "/", [pathname]);
 
-  return { updatePose, isHome  }
-
-}
+  return { updatePose, isHome };
+};

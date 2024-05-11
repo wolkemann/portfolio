@@ -17,8 +17,12 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => updatePose(isHome ? WOMAN_POSES.SIDEBAR_ABOUT_POSE : null)}
-            onMouseLeave={() => updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)}
+            onMouseEnter={() =>
+              updatePose(isHome ? WOMAN_POSES.SIDEBAR_ABOUT_POSE : null)
+            }
+            onMouseLeave={() =>
+              updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)
+            }
             to="/about"
           >
             About me
@@ -28,8 +32,12 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => updatePose(isHome ? WOMAN_POSES.SIDEBAR_PROJECTS_POSE : null)}
-            onMouseLeave={() => updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)}
+            onMouseEnter={() =>
+              updatePose(isHome ? WOMAN_POSES.SIDEBAR_PROJECTS_POSE : null)
+            }
+            onMouseLeave={() =>
+              updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)
+            }
             to="/projects"
           >
             Projects
@@ -39,8 +47,12 @@ export default function Sidebar() {
         <li>
           <NavLink
             className="link"
-            onMouseEnter={() => updatePose(isHome ? WOMAN_POSES.SIDEBAR_BLOG_POSE : null)}
-            onMouseLeave={() => updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)}
+            onMouseEnter={() =>
+              updatePose(isHome ? WOMAN_POSES.SIDEBAR_BLOG_POSE : null)
+            }
+            onMouseLeave={() =>
+              updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)
+            }
             to="/blog"
           >
             Blog
