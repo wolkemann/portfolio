@@ -34,83 +34,12 @@ export default function About() {
       <Loader />
       <Sidebar />
 
-      <article
-        ref={aboutRef}
-        className="min-w-screen min-h-screen flex flex-col"
-      >
-        <h1 className="min-w-screen min-h-screen flex about-title-size about-title-color">
-          <span className="m-auto">
-            About me<span className="text-gray-200">.</span>
-          </span>
-        </h1>
-        <div className="h-screen" />
-        <section className="about-article flex-col">
-          <h3 className="about-article-title">From Italy to Germany</h3>
-          <p className="about-p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim labore
-            non mollitia provident voluptatum laborum, quisquam nobis ex officia
-            harum assumenda temporibus tempora id, optio unde natus veritatis
-            nihil. Aliquid?
-          </p>
-        </section>
-      </article>
-      <div className="h-screen" />
-      <article className="min-w-screen min-h-screen flex flex-col" ref={cvRef}>
-        <h2 className="min-w-screen min-h-screen flex about-title-size about-title-color">
-          <span className="m-auto">
-            Curriculum Vitae<span className="text-gray-200">.</span>
+      <article>
+        <h2 className="w-screen h-screen p-5 md:p-10 flex text-bold text-[60px] md:text-[100px] text-center">
+          <span className="text-about-title m-auto">
+            About me<span className="text-gray-100">.</span>
           </span>
         </h2>
-
-        <div className="h-screen" />
-
-        <section className="md:w-[768px] md:m-auto">
-          <section>
-            <h3 className="about-article-title md:m-0 md:text-[40px] border-b-4 border-gray-100">
-              Work Experience<span className="text-gray-200">.</span>
-            </h3>
-            <ul className="about-p md:text-[22px] md:mx-0">
-              {workExperience.map(
-                ({ date, company, location, job, description }) => (
-                  <li key={company} className="my-5 md:my-10 text-[18px]">
-                    <div>
-                      {date}, {location}
-                    </div>
-                    <div className="flex justify-between flex-wrap">
-                      <span className="font-bold">{company}</span>{" "}
-                      <span className="text-about-title font-bold">{job}</span>
-                    </div>
-                    <div>
-                      <ul>
-                        {description.map((desc, index) => {
-                          return (
-                            <li className="my-5" key={index}>
-                              {desc}
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </li>
-                )
-              )}
-            </ul>
-          </section>
-          <section>
-            <h3 className="about-article-title md:m-0 md:text-[40px] border-b-4 border-gray-100">
-              Certifications<span className="text-gray-200">.</span>
-            </h3>
-            <ul className="about-p md:mt-1 md:text-[22px] md:mx-0 md:flex md:gap-5">
-              {certifications.map(({ url, name }) => (
-                <li key={url} className="py-5 text-[18px] md:text-center">
-                  <a href={url} target="_blank" className="py-5 w-full">
-                    {name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </section>
       </article>
 
       <div className="canvas">
