@@ -10,6 +10,8 @@ import { useScroll } from "@react-three/drei";
 import { WOMAN_POSES } from "../utils/constants";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 
+import meImage from "/images/me_placeholder.jpg";
+
 export default function About() {
   const { updatePose } = usePoseChanging();
 
@@ -43,6 +45,21 @@ export default function About() {
             About me<span className="text-gray-100">.</span>
           </span>
         </h2>
+        <div className="h-screen" />
+        <section className="min-h-screen h-screen text-gray-100 md:relative md:p-10 md:m-auto xl:w-[1000px]">
+          <div className="w-[300px] h-full bg-me bg-no-repeat bg-cover"></div>
+          <p className="absolute top-0 m-20 mt-35 mr-0 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-[20px]">
+            <span className="bg-black">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
+              eligendi voluptates nulla magni doloribus, unde, recusandae
+              impedit incidunt molestias reiciendis mollitia iste itaque quos
+              earum vitae cumque consectetur numquam temporibus?
+            </span>
+          </p>
+          <h2 className="text-about-title ml-20 md:absolute md:bottom-10 md:text-[85px] text-left [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+            From Italy to Germany
+          </h2>
+        </section>
       </article>
 
       <div className="canvas">
