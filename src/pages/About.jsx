@@ -47,8 +47,8 @@ export default function About() {
         </h2>
         <div className="h-screen" />
         <section className="min-h-screen h-screen text-gray-100 md:relative md:p-10 md:m-auto xl:w-[1000px]">
-          <div className="w-[300px] h-full bg-me bg-no-repeat bg-cover"></div>
-          <p className="absolute top-0 m-20 mt-35 mr-0 [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)] text-[20px]">
+          <div className="w-[300px] h-full bg-me bg-about-title bg-no-repeat bg-cover bg-origin-content p-5 bg-center"></div>
+          <p className="absolute top-0 m-24 mt-35 mr-0 text-[20px]">
             <span className="bg-black">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
               eligendi voluptates nulla magni doloribus, unde, recusandae
@@ -56,8 +56,8 @@ export default function About() {
               earum vitae cumque consectetur numquam temporibus?
             </span>
           </p>
-          <h2 className="text-about-title ml-20 md:absolute md:bottom-10 md:text-[85px] text-left [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
-            From Italy to Germany
+          <h2 className="text-about-title ml-20 md:absolute md:bottom-10 md:text-[85px]">
+            <span className="bg-black">From Italy to Germany</span>
           </h2>
         </section>
       </article>
