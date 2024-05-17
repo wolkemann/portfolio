@@ -46,19 +46,33 @@ export default function About() {
           </span>
         </h2>
         <div className="h-screen" />
-        <section className="min-h-screen h-screen text-gray-100 md:relative md:p-10 md:m-auto xl:w-[1000px]">
-          <div className="w-[300px] h-full bg-me bg-about-title bg-no-repeat bg-cover bg-origin-content p-5 bg-center"></div>
-          <p className="absolute top-0 m-24 mt-35 mr-0 text-[20px]">
-            <span className="bg-black">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
-              eligendi voluptates nulla magni doloribus, unde, recusandae
-              impedit incidunt molestias reiciendis mollitia iste itaque quos
-              earum vitae cumque consectetur numquam temporibus?
-            </span>
-          </p>
-          <h2 className="text-about-title ml-20 md:absolute md:bottom-10 md:text-[85px]">
+        <section className="min-h-screen h-screen text-gray-100 p-5 md:relative md:p-10 md:m-auto md:w-[768px] xl:w-[1000px]">
+          <h2 className="text-about-title md:ml-11 md:absolute md:bottom-10 text-[35px] md:text-[85px]">
             <span className="bg-black">From Italy to Germany</span>
           </h2>
+          <div className="h-full bg-me bg-about-title bg-no-repeat bg-cover bg-origin-content p-10 bg-center md:w-[300px]"></div>
+          <p className="md:absolute md:top-0 md:m-24 md:ml-[150px] md:mt-35 md:mr-0 text-[20px]">
+            <span className="bg-black">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis est
+              magnam tempora pariatur rem voluptate, porro sint ea magni! Libero
+              vitae et adipisci nisi corrupti ipsa natus voluptas! Impedit, quo.
+              Minus nam repellendus deleniti excepturi odio aspernatur, quasi
+              facere maxime! Iusto ullam voluptas, voluptatibus corrupti
+              nesciunt illum itaque asperiores rerum a. Autem soluta modi
+              repudiandae possimus non inventore. Magni, accusamus. Facere qui
+              provident at? Fugiat, facere eligendi? Beatae, quaerat facere
+              voluptate delectus quidem vel sunt voluptas perferendis libero.
+              Enim molestias nostrum deleniti! Aperiam ipsam perspiciatis minus
+              qui provident voluptatem placeat? Veniam, magni veritatis tenetur
+              quos asperiores repellat est cum suscipit eaque sint quibusdam
+              temporibus ab laborum nemo in cumque incidunt quidem perferendis
+              aut laboriosam atque, quam dicta ducimus minima? Quisquam. Enim,
+              itaque voluptatibus saepe a officiis illo odit. Perspiciatis eos
+              consectetur voluptate, eveniet perferendis molestias tempora id,
+              asperiores ullam magni accusantium ab ut voluptates autem eligendi
+              velit. Labore, incidunt error.
+            </span>
+          </p>
         </section>
       </article>
 
