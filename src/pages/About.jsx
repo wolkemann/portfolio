@@ -30,7 +30,9 @@ export default function About() {
 
   return (
     <main>
-      <div className="none md:fixed right-1 p-8 text-warmGray-100 font-bold"></div>
+      <div className="none md:fixed right-1 p-8 text-warmGray-100 font-bold">
+        In development
+      </div>
       <Cursor />
       <Loader />
       <Sidebar />
