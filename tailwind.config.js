@@ -9,7 +9,11 @@ export default {
       backgroundColor: "#35daec",
       "about-title": "#ff61c6",
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        me: "url('/images/me_placeholder.jpg')",
+      },
+    },
   },
   plugins: [],
 };
