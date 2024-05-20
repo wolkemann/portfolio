@@ -7,7 +7,7 @@ import AboutSection from "./AboutSection";
 export default function HomePage() {
   return (
     <main>
-      <div className="none md:fixed right-1 p-8 text-warmGray-100 font-bold">
+      <div className="hidden md:fixed right-1 p-8 text-warmGray-100 font-bold">
         In development
       </div>
       <Loader />
