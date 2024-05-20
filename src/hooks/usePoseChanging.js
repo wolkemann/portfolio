@@ -1,9 +1,7 @@
-import { useLocation } from "react-router-dom";
 import { usePortfolioDispatch } from "../context/PortfolioContext";
-import { useMemo } from "react";
+import { WOMAN_POSES } from "../utils/constants";
 
 export const usePoseChanging = () => {
-  const { pathname } = useLocation();
   const dispatch = usePortfolioDispatch();
 
   const updatePose = (pose) => {
@@ -24,7 +22,25 @@ export const usePoseChanging = () => {
     }
   };
 
-  const isHome = useMemo(() => pathname === "/", [pathname]);
+  const updateScene = (scene, pose = WOMAN_POSES.DEFAULT_POSE) => {
+    dispatch({
+      type: "updatePoseChangingState",
+      poseChanging: true,
+    });
+    setTimeout(() => {
+      dispatch({
+        type: "updatePageSectionState",
+        pageSection: scene,
+        womanPose: pose,
+      });
+      setTimeout(() => {
+        dispatch({
+          type: "updatePoseChangingState",
+          poseChanging: false,
+        });
+      }, 250);
+    }, 250);
+  };
 
-  return { updatePose, isHome };
+  return { updatePose, updateScene };
 };

@@ -32,6 +32,6 @@ function Ball() {
   );
 }
 
-export default function Balls() {
-  return Array.from({ length: 66 }, (_, i) => <Ball key={i} />);
+export default function Balls({ length = 66 }) {
+  return Array.from({ length }, (_, i) => <Ball key={i} />);
 }

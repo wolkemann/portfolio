@@ -42,6 +42,13 @@ const portfolioReducer = (state, action) => {
     case "updatePageTransitioningState": {
       return { ...state, pageTransitioning: action.pageTransitioning };
     }
+    case "updatePageSectionState": {
+      return {
+        ...state,
+        womanPose: action.womanPose,
+        pageSection: action.pageSection,
+      };
+    }
     default: {
       throw Error("Unknown action: " + action.type);
     }
@@ -54,4 +61,5 @@ const initialState = {
   pageLoaded: false,
   quoteFinished: false,
   pageTransitioning: false,
+  pageSection: "home",
 };
