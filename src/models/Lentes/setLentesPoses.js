@@ -8,7 +8,7 @@ export const setLentesPoses = (pose) => {
         rotation: [0, 0, 0],
       };
     }
-    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
+    case WOMAN_POSES.ABOUT_POSE: {
       return { position: [0, 0.179, 0.018], rotation: [-0.4, 0, 0] };
     }
     case WOMAN_POSES.HOME_NAME_POSE: {

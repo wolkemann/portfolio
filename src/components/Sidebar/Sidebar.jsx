@@ -18,7 +18,7 @@ export default function Sidebar() {
           <NavLink
             className="link"
             onMouseEnter={() =>
-              updatePose(isHome ? WOMAN_POSES.SIDEBAR_ABOUT_POSE : null)
+              updatePose(isHome ? WOMAN_POSES.ABOUT_POSE : null)
             }
             onMouseLeave={() =>
               updatePose(isHome ? WOMAN_POSES.DEFAULT_POSE : null)

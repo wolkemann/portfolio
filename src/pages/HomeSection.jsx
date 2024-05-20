@@ -1,6 +1,6 @@
 import { useInView } from "framer-motion";
 
-import { WOMAN_POSES } from "../utils/constants";
+import { SECTIONS, WOMAN_POSES } from "../utils/constants";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { useEffect, useRef } from "react";
 
@@ -11,7 +11,7 @@ export default function HomeSection() {
 
   useEffect(() => {
     if (isInView) {
-      updateScene("home");
+      updateScene(SECTIONS.HOME);
     }
   }, [isInView]);
 

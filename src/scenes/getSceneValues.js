@@ -1,9 +1,11 @@
+import { SECTIONS } from "../utils/constants";
+
 export const getSceneBackgroundColor = (section) => {
   switch (section) {
-    case "home":
+    case SECTIONS.HOME:
       return 0x35daec;
 
-    case "about":
+    case SECTIONS.ABOUT:
       return 0x0a0824;
 
     default:
@@ -13,10 +15,10 @@ export const getSceneBackgroundColor = (section) => {
 
 export const getDirectionalLightValues = (section) => {
   switch (section) {
-    case "home":
+    case SECTIONS.HOME:
       return 0.4;
 
-    case "about":
+    case SECTIONS.ABOUT:
       return 0;
 
     default:
@@ -26,10 +28,10 @@ export const getDirectionalLightValues = (section) => {
 
 export const getWomanShaderColor = (section) => {
   switch (section) {
-    case "home":
+    case SECTIONS.HOME:
       return { red: 170, blue: 170, green: 0 };
 
-    case "about":
+    case SECTIONS.ABOUT:
       return { red: 0, blue: 0.1, green: 0.0 };
 
     default:
@@ -39,10 +41,10 @@ export const getWomanShaderColor = (section) => {
 
 export const getLentesGlassColor = (section) => {
   switch (section) {
-    case "home":
+    case SECTIONS.HOME:
       return 0x0a0c37ff;
 
-    case "about":
+    case SECTIONS.ABOUT:
       return "black";
 
     default:
@@ -52,10 +54,10 @@ export const getLentesGlassColor = (section) => {
 
 export const getBallsNumber = (section) => {
   switch (section) {
-    case "home":
+    case SECTIONS.HOME:
       return 66;
 
-    case "about":
+    case SECTIONS.ABOUT:
       return 0;
 
     default:

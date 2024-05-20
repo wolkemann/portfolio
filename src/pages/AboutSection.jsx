@@ -1,7 +1,7 @@
 import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
-import { WOMAN_POSES } from "../utils/constants";
+import { SECTIONS, WOMAN_POSES } from "../utils/constants";
 
 export default function AboutSection() {
   const { updateScene } = usePoseChanging();
@@ -10,7 +10,7 @@ export default function AboutSection() {
 
   useEffect(() => {
     if (isInView) {
-      updateScene("about", WOMAN_POSES.SIDEBAR_ABOUT_POSE);
+      updateScene(SECTIONS.ABOUT, WOMAN_POSES.ABOUT_POSE);
     }
   }, [isInView]);
 

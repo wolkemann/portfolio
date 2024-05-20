@@ -20,7 +20,7 @@ export const setwomanPoses = (pose, nodes) => {
      *  Sidebar - About me: Right hand on the head and left hand on the chest
      *
      */
-    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
+    case WOMAN_POSES.ABOUT_POSE: {
       initialWomanPose(nodes);
       nodes["mixamorigSpine1_03"].rotation.x = -0.087;
       nodes["mixamorigNeck_05"].rotation.x = 0.072;
