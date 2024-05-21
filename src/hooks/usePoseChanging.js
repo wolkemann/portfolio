@@ -1,5 +1,5 @@
 import { usePortfolioDispatch } from "../context/PortfolioContext";
-import { WOMAN_POSES } from "../utils/constants";
+import { ACTIONS, WOMAN_POSES } from "../utils/constants";
 
 export const usePoseChanging = () => {
   const dispatch = usePortfolioDispatch();
@@ -7,14 +7,14 @@ export const usePoseChanging = () => {
   const updatePose = (pose) => {
     if (pose) {
       dispatch({
-        type: "updatePoseChangingState",
+        type: ACTIONS.UPDATE_POSE_CHANGING,
         poseChanging: true,
       });
       setTimeout(() => {
-        dispatch({ type: "updatePoseState", womanPose: pose });
+        dispatch({ type: ACTIONS.UPDATE_POSE, womanPose: pose });
         setTimeout(() => {
           dispatch({
-            type: "updatePoseChangingState",
+            type: ACTIONS.UPDATE_POSE_CHANGING,
             poseChanging: false,
           });
         }, 100);
@@ -24,22 +24,22 @@ export const usePoseChanging = () => {
 
   const updateScene = (scene, pose = WOMAN_POSES.DEFAULT_POSE) => {
     dispatch({
-      type: "updatePoseChangingState",
+      type: ACTIONS.UPDATE_POSE_CHANGING,
       poseChanging: true,
     });
     setTimeout(() => {
       dispatch({
-        type: "updatePageSectionState",
+        type: ACTIONS.UPDATE_PAGE_SECTION,
         pageSection: scene,
         womanPose: pose,
       });
       setTimeout(() => {
         dispatch({
-          type: "updatePoseChangingState",
+          type: ACTIONS.UPDATE_POSE_CHANGING,
           poseChanging: false,
         });
-      }, 250);
-    }, 250);
+      }, 200);
+    }, 200);
   };
 
   return { updatePose, updateScene };

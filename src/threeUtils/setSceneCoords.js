@@ -5,7 +5,7 @@ export const setSceneCoords = (pos) => {
     case WOMAN_POSES.DEFAULT_POSE: {
       return { position: [0, 0, 0], rotation: [0, -1.55, 0] };
     }
-    case WOMAN_POSES.SIDEBAR_ABOUT_POSE: {
+    case WOMAN_POSES.ABOUT_POSE: {
       return { position: [0, 0, 0], rotation: [0, -5.55, 0] };
     }
     case WOMAN_POSES.HOME_QUOTE_POSE: {

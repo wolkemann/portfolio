@@ -1,5 +1,5 @@
 import { createContext, useContext, useReducer } from "react";
-import { WOMAN_POSES } from "../utils/constants";
+import { ACTIONS, SECTIONS, WOMAN_POSES } from "../utils/constants";
 
 const PortfolioContext = createContext(null);
 
@@ -27,22 +27,22 @@ export function usePortfolioDispatch() {
 
 const portfolioReducer = (state, action) => {
   switch (action.type) {
-    case "updatePoseState": {
+    case ACTIONS.UPDATE_POSE: {
       return { ...state, womanPose: action.womanPose };
     }
-    case "updatePoseChangingState": {
+    case ACTIONS.UPDATE_POSE_CHANGING: {
       return { ...state, poseChanging: action.poseChanging };
     }
-    case "updatePageLoadedState": {
+    case ACTIONS.UPDATE_PAGE_LOADED: {
       return { ...state, pageLoaded: action.pageLoaded };
     }
-    case "updateQuoteFinishedState": {
+    case ACTIONS.UPDATE_QUOTE_FINSIHED: {
       return { ...state, quoteFinished: action.quoteFinished };
     }
-    case "updatePageTransitioningState": {
+    case ACTIONS.UPDATE_PAGE_TRANSITIONING: {
       return { ...state, pageTransitioning: action.pageTransitioning };
     }
-    case "updatePageSectionState": {
+    case ACTIONS.UPDATE_PAGE_SECTION: {
       return {
         ...state,
         womanPose: action.womanPose,
@@ -61,5 +61,5 @@ const initialState = {
   pageLoaded: false,
   quoteFinished: false,
   pageTransitioning: false,
-  pageSection: "home",
+  pageSection: SECTIONS.HOME,
 };
