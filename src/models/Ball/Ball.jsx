@@ -11,6 +11,8 @@ function Ball() {
     return [THREE.MathUtils.randFloatSpread(2), 0, z];
   }, []);
 
+  const scale = useMemo(() => Math.random() / 22, []);
+
   return (
     <Float
       position={position}
@@ -20,7 +22,7 @@ function Ball() {
       dispose={null}
     >
       <mesh
-        scale={Math.random() / 22}
+        scale={scale}
         material={new CustomToonMaterial({ red: 0, blue: 250, green: 0 })}
         castShadow
         className="mouse-interact"

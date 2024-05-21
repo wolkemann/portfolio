@@ -1,4 +1,4 @@
-import { useInView } from "framer-motion";
+import { useInView, motion } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
@@ -15,12 +15,17 @@ export default function AboutSection() {
   }, [isInView]);
 
   return (
-    <section ref={ref}>
+    <section ref={ref} id={SECTIONS.ABOUT}>
       <article>
-        <h2 className="w-screen h-screen p-5 md:p-10 flex text-bold text-[60px] md:text-[100px] text-center">
-          <span className="text-about-title m-auto">
+        <h2 className="w-screen h-screen p-5 md:p-10 flex text-bold text-[60px] md:text-[100px] justify-center items-center">
+          <motion.span
+            className="text-about-title"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { delay: 1 } }}
+            viewport={{ margin: "0px 0px -200px 0px", once: true }}
+          >
             About me<span className="text-gray-100">.</span>
-          </span>
+          </motion.span>
         </h2>
         <div className="h-screen" />
         <section className="min-h-screen h-screen text-gray-100 md:p-10 md:m-auto md:w-[768px] xl:w-[1000px]">

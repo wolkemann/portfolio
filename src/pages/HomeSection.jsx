@@ -18,6 +18,7 @@ export default function HomeSection() {
   return (
     <section
       ref={ref}
+      id={SECTIONS.HOME}
       className="md:relative md:p-8 md:pt-0 
       h-screen flex flex-col p-5 justify-center"
     >
