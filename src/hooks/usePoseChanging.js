@@ -33,14 +33,14 @@ export const usePoseChanging = () => {
         type: ACTIONS.UPDATE_POSE_CHANGING,
         poseChanging: true,
       });
-      document.getElementById(scene).scrollIntoView({
-        behavior: "instant",
-      });
       setTimeout(() => {
         dispatch({
           type: ACTIONS.UPDATE_PAGE_SECTION,
           pageSection: scene,
           womanPose: pose,
+        });
+        document.getElementById(scene).scrollIntoView({
+          behavior: "instant",
         });
         setTimeout(() => {
           dispatch({

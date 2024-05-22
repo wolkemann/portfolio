@@ -3,6 +3,8 @@ import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
 
+import myFoto from "/images/me_placeholder.jpg";
+
 export default function AboutSection() {
   const { updateScene } = usePoseChanging();
   const ref = useRef(null);
@@ -29,16 +31,9 @@ export default function AboutSection() {
         </h2>
         <div className="h-screen" />
         <section className="min-h-screen h-screen text-gray-100 md:p-10 md:m-auto md:w-[768px] xl:w-[1000px]">
-          <h2 className="text-about-title text-[35px] md:text-[55px] float-left m-5 w-[300px]">
-            <span className="bg-black">From Italy to Germany</span>
-          </h2>
-
-          <p className="text-[25px]">
-            <span className="bg-black">
-              I was raised and lived most of my life in a small town in the
-              center of Sicily, Italy.
-            </span>
-          </p>
+          <figure className="bg-about-title py-5 h-full w-[400px] rounded shadow-2xl">
+            <img src={myFoto} className=" w-full h-full shadow-2xl" />
+          </figure>
         </section>
       </article>
     </section>
