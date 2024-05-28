@@ -16,52 +16,56 @@ export default function Loader() {
   const dispatch = usePortfolioDispatch();
 
   useEffect(() => {
+    document.body.style.overflow = "hidden";
     if (progress === 100) {
       dispatch({ type: "updatePageLoadedState", pageLoaded: true });
     }
   }, [progress, dispatch]);
 
   return (
-    <motion.div
-      animate={quoteFinished ? "loaded" : false}
-      exit="closing"
-      variants={containerVariants}
-      className={`${
-        animationCompleted ? "-z-[999]" : "z-[999]"
-      } fixed w-screen h-screen`}
-    >
-      {pageLoaded && (
-        <div className="md:text-[65px] absolute">
-          <Typewriter />
-        </div>
-      )}
+    !animationCompleted && (
       <motion.div
-        variants={tileVariants}
-        custom={width}
-        className="z-[999] w-screen h-[20%] bg-backgroundColor"
-      ></motion.div>
-      <motion.div
-        variants={tileVariants}
-        custom={width}
-        className="z-[999] w-screen h-[20%] bg-backgroundColor"
-      ></motion.div>
-      <motion.div
-        variants={tileVariants}
-        custom={width}
-        className="z-[999] w-screen h-[20%] bg-backgroundColor"
-      ></motion.div>
-      <motion.div
-        variants={tileVariants}
-        custom={width}
-        className="z-[999] w-screen h-[20%] bg-backgroundColor"
-      ></motion.div>
-      <motion.div
-        variants={tileVariants}
-        custom={width}
-        onAnimationComplete={() => setAnimationCompleted(true)}
-        className="z-[999] w-screen h-[20%] bg-backgroundColor"
-      ></motion.div>
-    </motion.div>
+        animate={quoteFinished ? "loaded" : false}
+        exit="closing"
+        variants={containerVariants}
+        className="z-[999] fixed w-screen h-screen"
+      >
+        {pageLoaded && (
+          <div className="md:text-[65px] absolute">
+            <Typewriter />
+          </div>
+        )}
+        <motion.div
+          variants={tileVariants}
+          custom={width}
+          className="z-[999] w-screen h-[20%] bg-backgroundColor"
+        ></motion.div>
+        <motion.div
+          variants={tileVariants}
+          custom={width}
+          className="z-[999] w-screen h-[20%] bg-backgroundColor"
+        ></motion.div>
+        <motion.div
+          variants={tileVariants}
+          custom={width}
+          className="z-[999] w-screen h-[20%] bg-backgroundColor"
+        ></motion.div>
+        <motion.div
+          variants={tileVariants}
+          custom={width}
+          className="z-[999] w-screen h-[20%] bg-backgroundColor"
+        ></motion.div>
+        <motion.div
+          variants={tileVariants}
+          custom={width}
+          onAnimationComplete={() => {
+            document.body.style.overflow = "visible";
+            setAnimationCompleted(true);
+          }}
+          className="z-[999] w-screen h-[20%] bg-backgroundColor"
+        ></motion.div>
+      </motion.div>
+    )
   );
 }
 
