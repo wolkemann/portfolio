@@ -17,11 +17,11 @@ export default function AboutSection() {
   }, [isInView]);
 
   return (
-    <section ref={ref} id={SECTIONS.ABOUT}>
+    <section className="container" ref={ref} id={SECTIONS.ABOUT}>
       <article>
         <h2 className="w-screen h-screen p-5 md:p-10 flex text-bold text-[60px] md:text-[100px] justify-center items-center">
           <motion.span
-            className="text-about-title"
+            className="text-about-title font-black md:tracking-widest"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, transition: { delay: 1 } }}
             viewport={{ margin: "0px 0px -200px 0px", once: true }}
@@ -30,10 +30,27 @@ export default function AboutSection() {
           </motion.span>
         </h2>
         <div className="h-screen" />
-        <section className="min-h-screen h-screen text-gray-100 md:p-10 md:m-auto md:w-[768px] xl:w-[1000px]">
-          <figure className="bg-about-title py-5 h-full w-[400px] rounded shadow-2xl">
-            <img src={myFoto} className=" w-full h-full shadow-2xl" />
-          </figure>
+        <section className="w-screen min-h-screen h-screen text-gray-100 md:flex md:gap-10 md:items-center md:p-10">
+          <h3 className="text-about-title font-black mb-10 md:text-5xl xl:text-7xl">
+            FROM ITALY TO GERMANY
+          </h3>
+          <div className="font-semibold md:text-xl xl:text-3xl">
+            <p className="my-10">
+              I used to live most of the time in a small town in the center of
+              Sicily, Italy.
+            </p>
+            <p className="my-10">
+              My life has been a bit of a roller coaster: after graduating from
+              law school and working as a legal consultant, I decided to turn my
+              life around and started a new beginning in Germany.
+            </p>
+            <p className="my-10">
+              While there learning the language, I decided to embark on a Web
+              Developing Bootcamp at Neufische Gmbh at the same time. Today I
+              work as a frontend developer for a private jet company, in the
+              Hanseatic city of Hamburg.
+            </p>
+          </div>
         </section>
       </article>
     </section>
