@@ -8,6 +8,9 @@ export const getSceneBackgroundColor = (section) => {
     case SECTIONS.ABOUT:
       return 0x0a0824;
 
+    case SECTIONS.PROJECTS:
+      return 0xfab67f;
+
     default:
       return "white";
   }
@@ -29,13 +32,16 @@ export const getDirectionalLightValues = (section) => {
 export const getWomanShaderColor = (section) => {
   switch (section) {
     case SECTIONS.HOME:
-      return { red: 170, blue: 170, green: 0 };
+      return { red: 1.7, green: 0, blue: 1.7 };
 
     case SECTIONS.ABOUT:
-      return { red: 0, blue: 0.1, green: 0.0 };
+      return { red: 0, green: 0, blue: 0.1 };
+
+    case SECTIONS.PROJECTS:
+      return { red: 1.7, green: 0, blue: 1.7 };
 
     default:
-      return { red: 170, blue: 170, green: 0 };
+      return { red: 170, green: 0, blue: 170 };
   }
 };
 

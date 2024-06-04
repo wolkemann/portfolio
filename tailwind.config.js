@@ -8,6 +8,7 @@ export default {
       ...colors,
       backgroundColor: "#35daec",
       "about-title": "#ff61c6",
+      "projects-title": "#4605ec"
     },
     extend: {
       backgroundImage: {

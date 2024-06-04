@@ -33,4 +33,5 @@ export const ACTIONS = {
 export const SECTIONS = {
   HOME: "home",
   ABOUT: "about",
+  PROJECTS: "projects",
 };
