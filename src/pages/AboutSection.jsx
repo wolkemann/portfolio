@@ -3,8 +3,6 @@ import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
 
-import myFoto from "/images/me_placeholder.jpg";
-
 export default function AboutSection() {
   const { updateScene } = usePoseChanging();
   const ref = useRef(null);
@@ -30,8 +28,8 @@ export default function AboutSection() {
           </motion.span>
         </h2>
         <div className="h-screen" />
-        <section className="w-screen min-h-screen h-screen text-gray-100 p-5 md:flex md:gap-10 md:items-center md:p-10">
-          <h3 className="text-about-title font-black mb-5 md:mb-10 text-2xl md:tracking-widest md:text-5xl xl:text-7xl">
+        <section className="w-screen min-h-screen text-gray-100 p-5 md:flex md:gap-10 md:items-center md:p-10">
+          <h3 className="text-about-title self-end font-black mb-5 md:mb-10 text-2xl md:tracking-widest md:text-5xl xl:text-7xl">
             FROM ITALY TO GERMANY
           </h3>
           <div className="font-semibold tracking-widest md:text-xl xl:text-3xl">

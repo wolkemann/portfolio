@@ -3,6 +3,7 @@ import Cursor from "../components/Cursor/Cursor";
 import HomeSection from "./HomeSection";
 import MainScene from "../scenes/MainScene";
 import AboutSection from "./AboutSection";
+import PorjectsSection from "./ProjectsSection";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,8 @@ export default function HomePage() {
       <HomeSection />
       <div className="h-screen" />
       <AboutSection />
+      <div className="h-screen" />
+      <PorjectsSection />
     </main>
   );
 }
