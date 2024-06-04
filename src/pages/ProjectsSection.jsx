@@ -4,7 +4,7 @@ import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
-export default function PorjectsSection() {
+export default function ProjectsSection() {
   const { updateScene } = usePoseChanging();
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -22,7 +22,7 @@ export default function PorjectsSection() {
           MY PROJECTS
         </h3>
         <div className="mx-auto">
-          <div className="w-[700px] h-[650px] overflow-y-scroll snap-mandatory snap-y">
+          <div className="w-[700px] h-[300px] overflow-y-scroll snap-mandatory snap-y">
             {projects.map((project) => (
               <ProjectCard key={project.name} {...project} />
             ))}

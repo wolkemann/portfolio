@@ -3,7 +3,7 @@ import Cursor from "../components/Cursor/Cursor";
 import HomeSection from "./HomeSection";
 import MainScene from "../scenes/MainScene";
 import AboutSection from "./AboutSection";
-import PorjectsSection from "./ProjectsSection";
+import ProjectsSection from "./ProjectsSection";
 
 export default function HomePage() {
   return (
@@ -19,7 +19,7 @@ export default function HomePage() {
       <div className="h-screen" />
       <AboutSection />
       <div className="h-screen" />
-      <PorjectsSection />
+      <ProjectsSection />
     </main>
   );
 }
