@@ -15,11 +15,13 @@ export default function HomePage() {
       <Cursor />
       <MainScene />
 
-      <HomeSection />
-      <div className="h-screen" />
-      <AboutSection />
-      <div className="h-screen" />
-      <ProjectsSection />
+      <div className="h-screen w-screen overflow-y-scroll snap-mandatory snap-y">
+        <HomeSection />
+        <div className="h-screen" />
+        <AboutSection />
+        <div className="h-screen" />
+        <ProjectsSection />
+      </div>
     </main>
   );
 }

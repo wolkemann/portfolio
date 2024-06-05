@@ -19,8 +19,8 @@ export default function HomeSection() {
     <section
       ref={ref}
       id={SECTIONS.HOME}
-      className="md:relative md:p-8 md:pt-0 
-      h-screen flex flex-col p-5 justify-center"
+      className="md:relative md:p-8
+      h-screen flex flex-col p-5 justify-center snap-center"
     >
       <div className="md:absolute md:w-[500px] md:left-0 md:bottom-0 md:p-10">
         <div

@@ -1,4 +1,4 @@
-import { useInView, motion } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
@@ -16,7 +16,7 @@ export default function ProjectsSection() {
   }, [isInView]);
 
   return (
-    <section className="container" ref={ref} id={SECTIONS.PROJECTS}>
+    <section className="container snap-center" ref={ref} id={SECTIONS.PROJECTS}>
       <div className="w-screen min-h-screen text-gray-100 p-5 md:flex md:gap-10 md:items-center md:p-10">
         <h3 className="text-projects-title font-black mb-5 md:mb-10 text-2xl self-end md:max-w-[200px] md:tracking-widest md:text-5xl xl:text-7xl">
           MY PROJECTS
