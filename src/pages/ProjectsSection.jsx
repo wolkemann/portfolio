@@ -18,7 +18,7 @@ export default function ProjectsSection() {
   return (
     <section className="container snap-center" ref={ref} id={SECTIONS.PROJECTS}>
       <div className="w-screen min-h-screen text-gray-100 p-5 md:flex md:gap-10 md:items-center md:p-10">
-        <h3 className="text-projects-title font-black mb-5 md:mb-10 text-2xl self-end md:max-w-[200px] md:tracking-widest md:text-5xl xl:text-7xl">
+        <h3 className="text-projects-title font-black mb-5 md:mb-0 text-2xl self-end md:max-w-[200px] md:tracking-widest md:text-5xl xl:text-7xl">
           MY PROJECTS
         </h3>
         <div className="mx-auto">
