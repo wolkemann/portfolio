@@ -1,9 +1,9 @@
-import Loader from "../components/Loader/Loader";
-import Cursor from "../components/Cursor/Cursor";
-import HomeSection from "./HomeSection";
-import MainScene from "../scenes/MainScene";
-import AboutSection from "./AboutSection";
-import ProjectsSection from "./ProjectsSection";
+import Loader from "./components/Loader/Loader";
+import Cursor from "./components/Cursor/Cursor";
+import HomeSection from "./pages/HomeSection";
+import MainScene from "./scenes/MainScene";
+import AboutSection from "./pages/AboutSection";
+import ProjectsSection from "./pages/ProjectsSection";
 
 export default function HomePage() {
   return (
