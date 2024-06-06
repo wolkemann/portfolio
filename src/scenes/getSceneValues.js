@@ -22,7 +22,7 @@ export const getDirectionalLightValues = (section) => {
       return 0.4;
 
     case SECTIONS.ABOUT:
-      return 0;
+      return 0.05;
 
     default:
       return 0.4;

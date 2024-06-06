@@ -17,18 +17,19 @@ export default function ProjectsSection() {
 
   return (
     <section className="container snap-center" ref={ref} id={SECTIONS.PROJECTS}>
-      <div className="w-screen min-h-screen text-gray-100 p-5 md:flex md:items-center md:p-10">
+      <div className="w-screen h-screen text-gray-100 p-5 md:flex md:items-center md:gap-10 md:p-10">
         <h3 className="text-projects-title font-black mb-5 md:mb-0 text-2xl self-end md:tracking-widest md:text-5xl xl:text-7xl">
-          MY<br/>PROJECTS
+          MY
+          <br />
+          PROJECTS
         </h3>
-      
-          <div className="mx-auto w-[700px] h-[300px] overflow-y-scroll snap-mandatory snap-y">
-            {projects.map((project) => (
-              <ProjectCard key={project.name} {...project} />
-            ))}
-          </div>
+
+        <div className="w-[700px] h-full overflow-y-scroll snap-mandatory snap-y">
+          {projects.map((project) => (
+            <ProjectCard key={project.name} {...project} />
+          ))}
         </div>
-   
+      </div>
     </section>
   );
 }
