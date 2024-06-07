@@ -25,16 +25,16 @@ export default function AboutSection() {
           FROM ITALY TO GERMANY
         </h3>
         <div className="font-semibold tracking-widest md:text-xl xl:text-3xl">
-          <p className="mb-5 md:mb-10">
+          <p className="mb-5 md:mb-10 leading-relaxed">
             I used to live most of the time in a small town in the center of
             Sicily, Italy.
           </p>
-          <p className="my-5 md:my-10">
+          <p className="my-5 md:my-10 leading-relaxed">
             My life has been a bit of a roller coaster: after graduating from
             law school and working as a legal consultant, I decided to turn my
             life around and started a new beginning in Germany.
           </p>
-          <p className="mt-5 md:mt-10">
+          <p className="mt-5 md:mt-10 leading-relaxed">
             While there learning the language, I decided to embark on a Web
             Developing Bootcamp at Neufische Gmbh at the same time. Today I work
             as a frontend developer for a private jet company, in the Hanseatic
