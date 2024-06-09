@@ -5,6 +5,7 @@ export default function setLightCoords(pos) {
     case WOMAN_POSES.ABOUT_POSE: {
       return [-5, 3, -2];
     }
+
     default: {
       return [2, 3, 2];
     }
