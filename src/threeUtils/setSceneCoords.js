@@ -14,6 +14,9 @@ export const setSceneCoords = (pos) => {
     case WOMAN_POSES.SIDEBAR_PROJECTS_POSE: {
       return { position: [0.35, 0, 0], rotation: [0, -0.8, 0] };
     }
+    case WOMAN_POSES.CONTACTS_POSE: {
+      return { position: [0.2, -0.1, 3], rotation: [-1, 1, 1] };
+    }
     case "Pose_5": {
       return { position: [0, 0.1, 0], rotation: [0, 0, 0] };
     }
