@@ -2,7 +2,7 @@
 import "@fontsource-variable/roboto-serif";
 
 // Pages
-import HomePage from "./pages/HomePage";
+import HomePage from "./HomePage";
 
 //Providers
 import { AnimatePresence } from "framer-motion";

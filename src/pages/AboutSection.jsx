@@ -24,7 +24,7 @@ export default function AboutSection() {
         <h3 className="text-about-title self-end font-black mb-5 md:mb-0 text-2xl md:tracking-widest md:text-5xl xl:text-7xl">
           FROM ITALY TO GERMANY
         </h3>
-        <div className="font-semibold tracking-widest md:text-xl xl:text-3xl">
+        <div className=" tracking-widest md:text-xl xl:text-3xl">
           <p className="mb-5 md:mb-10">
             I used to live most of the time in a small town in the center of
             Sicily, Italy.
