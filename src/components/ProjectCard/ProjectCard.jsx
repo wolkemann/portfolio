@@ -15,18 +15,20 @@ export default function ProjectCard({
       <div className="max-w-full p-5 md:p-10 bg-gray-50 rounded shadow-lg md:m-auto md:w-[900px]">
         <h4 className="flex items-center gap-2 mb-5 text-xl font-black tracking-widest md:mb-10 md:text-2xl xl:text-5xl">
           {name}
-          {website && <a href={website} target="_BLANK">
-            <Icon
-              icon="eva:external-link-outline"
-              className="text-projects-title text-2xl md:text-4xl"
-            />
-          </a>}
+          {website && (
+            <a href={website} target="_BLANK">
+              <Icon
+                icon="eva:external-link-outline"
+                className="text-projects-title text-2xl md:text-4xl"
+              />
+            </a>
+          )}
         </h4>
 
         <p className="mb-5 tracking-widest leading-relaxed text-xs md:text-l xl:text-xl">
           {description}
         </p>
-        {tech && (
+        {false && (
           <p className="text-right mb-5 tracking-widest leading-relaxed text-sm md:text-l xl:text-xl">
             <span className="font-black">Made with - </span>
             {tech.join(", ")}

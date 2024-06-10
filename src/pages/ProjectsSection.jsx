@@ -1,4 +1,4 @@
-import { useInView, useSpring, motion, useScroll } from "framer-motion";
+import { useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
@@ -8,13 +8,6 @@ export default function ProjectsSection() {
   const { updateScene } = usePoseChanging();
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const projectsRef = useRef(null);
-  const { scrollY } = useScroll({container: projectsRef});
-  const scaleX = useSpring(scrollY, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
 
   useEffect(() => {
     if (isInView) {
@@ -24,12 +17,8 @@ export default function ProjectsSection() {
 
   return (
     <section className="container snap-center" ref={ref} id={SECTIONS.PROJECTS}>
-      <motion.div className="fixed bottom-0 h-[10px] bg-projects-title" style={{width: scrollY}}></motion.div>
       <div className="w-screen h-screen p-5 flex flex-col-reverse relative md:flex-row md:items-center md:gap-10 md:p-10">
-        <div
-          className="w-full h-full overflow-y-scroll snap-mandatory snap-y md:max-w-[700px] xl:max-w-[100%]"
-          ref={projectsRef}
-        >
+        <div className="w-full h-full overflow-y-scroll snap-mandatory snap-y md:max-w-[700px] xl:max-w-[100%]">
           {projects.map((project) => (
             <ProjectCard key={project.name} {...project} />
           ))}
