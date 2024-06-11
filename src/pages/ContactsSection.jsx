@@ -18,29 +18,52 @@ export default function ContactsSection() {
 
   return (
     <section
-      className="w-screen h-screen relative p-5 snap-center md:p-10"
+      className="w-screen h-screen p-5 snap-center md:p-10"
       id={SECTIONS.CONTACTS}
       ref={ref}
     >
-      <div className="absolute top-[100px]" style={{transform: "rotate3d(5, 10, 1, 60deg)"}}>
-      <div>
-        <h5 className="text-8xl font-black tracking-widest"><Icon icon={"mdi:github"} className="text-xl md:text-5xl" /> LinkedIn</h5>
-        <p className="bg-black text-pink-400 w-fit text-5xl tracking-widest">@Federico.Sardo</p>
+      <div className="flex flex-col gap-5 md:gap-10">
+        {contacts.map((contact) => (
+          <div key={contact.social}>
+            <h5 className="font-black tracking-widest flex gap-3 items-center text-2xl md:text-6xl xl:text-7xl">
+              <Icon icon={contact.icon} className="text-3xl md:text-7xl" />
+              {contact.social}
+            </h5>
+            <p className="bg-black text-pink-400 w-fit tracking-widest md:text-3xl xl:text-4xl">
+              <a href={contact.url} target="_BLANK">
+                @{contact.contactName}
+              </a>
+            </p>
+          </div>
+        ))}
       </div>
-      <div className="pt-[10px]">
-        <h5 className="text-8xl font-black tracking-widest">E-mail</h5>
-        <p className="bg-black text-pink-400 w-fit text-5xl tracking-widest">federico.sardo1@gmail.com</p>
-      </div>
-      <div className="pt-[10px]" >
-        <h5 className="text-8xl font-black tracking-widest">Instagram</h5>
-        <p className="bg-black text-pink-400 w-fit text-5xl tracking-widest">@wolke.mann</p>
-      </div>
-      <div className="pt-[10px]">
-        <h5 className="text-8xl font-black tracking-widest">Twitter</h5>
-        <p className="bg-black text-pink-400 w-fit text-5xl tracking-widest">@wolkemann</p>
-      </div>
-      </div>
-      
     </section>
   );
 }
+
+const contacts = [
+  {
+    social: "E-mail",
+    icon: "fluent:mail-20-filled",
+    contactName: "federico.sardo1@gmail.com",
+    url: "mailto:federico.sardo1@gmail.com",
+  },
+  {
+    social: "GitHub",
+    icon: "mdi:github",
+    contactName: "wolkemann",
+    url: "https://github.com/wolkemann",
+  },
+  {
+    social: "LinkedIn",
+    icon: "mdi:linkedin",
+    contactName: "federico-sardo",
+    url: "https://www.linkedin.com/in/federico-sardo-8187a3196/",
+  },
+  {
+    social: "Instagram",
+    icon: "mdi:instagram",
+    contactName: "wolke.mann",
+    url: "https://www.instagram.com/",
+  },
+];
