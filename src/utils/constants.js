@@ -37,3 +37,5 @@ export const SECTIONS = {
   PROJECTS: "projects",
   CONTACTS: "contacts",
 };
+
+export const MOBILE_BREAKPOINT = 768;
