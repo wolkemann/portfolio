@@ -18,7 +18,7 @@ export default function ContactsSection() {
 
   return (
     <section
-      className="w-screen h-screen p-5 snap-center md:p-10"
+      className="relative w-screen h-screen p-5 snap-center md:p-10"
       id={SECTIONS.CONTACTS}
       ref={ref}
     >
@@ -36,6 +36,12 @@ export default function ContactsSection() {
             </p>
           </div>
         ))}
+      </div>
+
+      <div className="absolute bg-black bottom-0 right-0 m-5 md:m-10 p-2">
+        <p className="text-pink-400 font-bold tracking-widest md:text-4xl xl:text-5xl">
+          Thanks for stopping by!
+        </p>
       </div>
     </section>
   );
