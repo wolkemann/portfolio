@@ -2,6 +2,8 @@ import { Float, Outlines } from "@react-three/drei";
 import { useMemo, useState } from "react";
 import * as THREE from "three";
 import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
+import useWindowSize from "../../hooks/useWindowSize";
+import { MOBILE_BREAKPOINT } from "../../utils/constants";
 
 function Ball() {
   const [speed] = useState(() => 0.1 + Math.random() / 10);
@@ -34,6 +36,10 @@ function Ball() {
   );
 }
 
-export default function Balls({ length = 66 }) {
+export default function Balls() {
+  const { width } = useWindowSize();
+
+  const length = useMemo(() => (width <= MOBILE_BREAKPOINT ? 33 : 66), [width]);
+
   return Array.from({ length }, (_, i) => <Ball key={i} />);
 }
