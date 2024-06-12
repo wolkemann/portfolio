@@ -1,3 +1,4 @@
+import { useWindowSize } from "../hooks/useWindowSize";
 import { Woman } from "../models/Woman/Woman";
 import { Lentes } from "../models/Lentes/Lentes";
 import { setSceneCoords } from "../threeUtils/setSceneCoords";
@@ -21,6 +22,7 @@ import {
 import Balls from "../models/Ball/Ball";
 
 export default function MainScene() {
+  const { width } = useWindowSize();
   const { womanPose, pageSection, poseChanging } = usePortfolio();
   return (
     <div className="canvas">
@@ -42,8 +44,8 @@ export default function MainScene() {
          * WOMAN MODEL
          */}
         <group
-          position={setSceneCoords(womanPose).position}
-          rotation={setSceneCoords(womanPose).rotation}
+          position={setSceneCoords(womanPose, width).position}
+          rotation={setSceneCoords(womanPose, width).rotation}
         >
           <Woman
             shaderColor={getWomanShaderColor(pageSection)}
