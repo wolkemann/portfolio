@@ -22,7 +22,7 @@ export default function ContactsSection() {
       id={SECTIONS.CONTACTS}
       ref={ref}
     >
-      <div className="flex flex-col gap-5 md:gap-10">
+      <div className="flex flex-col gap-5  mt-10 md:gap-10 md:mt-0">
         {contacts.map((contact) => (
           <div key={contact.social}>
             <h5 className="font-black tracking-widest flex gap-3 items-center text-2xl md:text-6xl xl:text-7xl">
