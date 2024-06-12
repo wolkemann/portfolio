@@ -4,6 +4,7 @@ import HomeSection from "./pages/HomeSection";
 import MainScene from "./scenes/MainScene";
 import AboutSection from "./pages/AboutSection";
 import ProjectsSection from "./pages/ProjectsSection";
+import ContactsSection from "./pages/ContactsSection";
 
 export default function HomePage() {
   return (
@@ -21,6 +22,8 @@ export default function HomePage() {
         <AboutSection />
         <div className="h-screen" />
         <ProjectsSection />
+        <div className="h-screen" />
+        <ContactsSection />
       </div>
     </main>
   );

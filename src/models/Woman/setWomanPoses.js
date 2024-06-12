@@ -68,6 +68,22 @@ export const setwomanPoses = (pose, nodes) => {
     }
     /**
      *
+     *  Contacts page section
+     *
+     */
+    case WOMAN_POSES.CONTACTS_POSE: {
+      initialWomanPose(nodes);
+      nodes["mixamorigSpine1_03"].rotation.x = -0.087;
+      nodes["mixamorigNeck_05"].rotation.x = 0.072;
+      nodes["mixamorigNeck_05"].rotation.y = 0;
+      nodes["mixamorigNeck_05"].rotation.z = 0;
+      nodes["mixamorigHead_06"].rotation.x = -0.246;
+      nodes["mixamorigHead_06"].rotation.y = 0;
+      nodes["mixamorigHead_06"].rotation.z = 0;
+      break;
+    }
+    /**
+     *
      *  Name mouseover: fuck you owner
      *
      */

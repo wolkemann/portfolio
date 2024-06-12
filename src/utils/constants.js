@@ -15,6 +15,7 @@ export const CURSOR_PROPS = {
 export const WOMAN_POSES = {
   DEFAULT_POSE: "Pose_0",
   ABOUT_POSE: "Pose_1",
+  CONTACTS_POSE: "contacts",
   SIDEBAR_PROJECTS_POSE: "Pose_4",
   SIDEBAR_BLOG_POSE: "Pose_6",
   HOME_NAME_POSE: "Pose_2",
@@ -34,4 +35,5 @@ export const SECTIONS = {
   HOME: "home",
   ABOUT: "about",
   PROJECTS: "projects",
+  CONTACTS: "contacts",
 };
