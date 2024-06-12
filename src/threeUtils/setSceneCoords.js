@@ -16,7 +16,10 @@ export const setSceneCoords = (pos, breakpoint) => {
       return { position: [0, 0.72, 0], rotation: [0, 3.32, 0] };
     }
     case WOMAN_POSES.SIDEBAR_PROJECTS_POSE: {
-      return { position: [0.35, 0, 0], rotation: [0, -0.8, 0] };
+      return {
+        position: isMobile ? [0, -0.28, 0] : [0.35, 0, 0],
+        rotation: [0, -0.8, 0],
+      };
     }
     case WOMAN_POSES.CONTACTS_POSE: {
       return {
