@@ -1,3 +1,4 @@
+import { useCallback } from "react";
 import {
   usePortfolio,
   usePortfolioDispatch,
@@ -8,7 +9,7 @@ export const usePoseChanging = () => {
   const { pageLoaded } = usePortfolio();
   const dispatch = usePortfolioDispatch();
 
-  const updatePose = (pose) => {
+  const updatePose = useCallback((pose) => {
     if (pose) {
       dispatch({
         type: ACTIONS.UPDATE_POSE_CHANGING,
@@ -24,9 +25,9 @@ export const usePoseChanging = () => {
         }, 100);
       }, 100);
     }
-  };
+  }, [dispatch]);
 
-  const updateScene = (scene, pose = WOMAN_POSES.DEFAULT_POSE) => {
+  const updateScene = useCallback((scene, pose = WOMAN_POSES.DEFAULT_POSE) => {
     if (pageLoaded) {
       document.body.style.overflow = "hidden";
       dispatch({
@@ -48,7 +49,7 @@ export const usePoseChanging = () => {
         }, 200);
       }, 200);
     }
-  };
+  }, [pageLoaded, dispatch]);
 
   return { updatePose, updateScene };
 };

@@ -13,7 +13,7 @@ export default function ProjectsSection() {
     if (isInView) {
       updateScene(SECTIONS.PROJECTS, WOMAN_POSES.SIDEBAR_PROJECTS_POSE);
     }
-  }, [isInView]);
+  }, [isInView, updateScene]);
 
   return (
     <section className="container snap-center" ref={ref} id={SECTIONS.PROJECTS}>
