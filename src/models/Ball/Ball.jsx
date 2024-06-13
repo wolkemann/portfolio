@@ -5,13 +5,13 @@ import CustomToonMaterial from "../../threeUtils/customToonMaterial/material";
 import useWindowSize from "../../hooks/useWindowSize";
 import { MOBILE_BREAKPOINT } from "../../utils/constants";
 
-function Ball() {
+function Ball({isMobile = false}) {
   const [speed] = useState(() => 0.1 + Math.random() / 10);
   const position = useMemo(() => {
     const z = -0.2 - Math.random();
 
-    return [THREE.MathUtils.randFloatSpread(2), 0, z];
-  }, []);
+    return [THREE.MathUtils.randFloatSpread(isMobile? 0.3 : 2), 0, z];
+  }, [isMobile]);
 
   const scale = useMemo(() => Math.random() / 22, []);
 
@@ -39,7 +39,7 @@ function Ball() {
 export default function Balls() {
   const { width } = useWindowSize();
 
-  const length = useMemo(() => (width <= MOBILE_BREAKPOINT ? 33 : 66), [width]);
+  const isMobile = useMemo(() => (width <= MOBILE_BREAKPOINT), [width]);
 
-  return Array.from({ length }, (_, i) => <Ball key={i} />);
+  return Array.from({ length: isMobile? 10 : 66 }, (_, i) => <Ball key={i} isMobile={isMobile} />);
 }

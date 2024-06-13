@@ -14,7 +14,7 @@ export default function ContactsSection() {
     if (isInView) {
       updateScene(SECTIONS.CONTACTS, WOMAN_POSES.CONTACTS_POSE);
     }
-  }, [isInView]);
+  }, [isInView, updateScene]);
 
   return (
     <section
