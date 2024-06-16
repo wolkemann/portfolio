@@ -1,12 +1,16 @@
 import { useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { usePoseChanging } from "../hooks/usePoseChanging";
 import { SECTIONS, WOMAN_POSES } from "../utils/constants";
+import { AnimatedText } from "../components/AnimatedText/AnimatedText";
+import getRandomQuotes from "../utils/quotes";
 
 export default function AboutSection() {
   const { updateScene } = usePoseChanging();
   const ref = useRef(null);
   const isInView = useInView(ref);
+
+  const randomQuote = useMemo(() => getRandomQuotes(), []);
 
   useEffect(() => {
     if (isInView) {
@@ -16,11 +20,12 @@ export default function AboutSection() {
 
   return (
     <section
-      className="w-screen h-screen p-5 snap-center md:p-10"
+      className="relative w-screen h-screen p-5 snap-center md:p-10"
       id={SECTIONS.ABOUT}
       ref={ref}
     >
       <article className="h-full text-gray-100 md:flex md:gap-10 md:items-center">
+        <AnimatedText text={randomQuote} color="about-title" />
         <h3 className="text-about-title self-end font-black mb-5 md:mb-0 text-2xl md:tracking-widest md:text-5xl xl:text-7xl">
           FROM ITALY TO GERMANY
         </h3>
