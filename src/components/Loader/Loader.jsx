@@ -1,109 +1,63 @@
 import { useProgress } from "@react-three/drei";
-import Typewriter from "./Typewriter";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   usePortfolio,
   usePortfolioDispatch,
 } from "../../context/PortfolioContext";
-import { motion } from "framer-motion";
-import useWindowSize from "../../hooks/useWindowSize";
+import { motion, useAnimationControls } from "framer-motion";
+import { AnimatedText } from "../AnimatedText/AnimatedText";
+import getRandomQuotes from "../../utils/quotes";
 
 export default function Loader() {
   const [animationCompleted, setAnimationCompleted] = useState(false);
-  const { width } = useWindowSize();
-  const { pageLoaded, quoteFinished } = usePortfolio();
+  const { pageLoaded } = usePortfolio();
   const { progress } = useProgress();
   const dispatch = usePortfolioDispatch();
+  const controls = useAnimationControls();
+
+  const randomQuote = useMemo(() => getRandomQuotes(), []);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    const sequence = async () => {
+      await controls.start("loaded");
+      setAnimationCompleted(true);
+      document.body.style.overflow = "visible";
+      return;
+    };
     if (progress === 100) {
       dispatch({ type: "updatePageLoadedState", pageLoaded: true });
+      sequence();
     }
-  }, [progress, dispatch]);
+  }, [progress, dispatch, controls]);
 
   return (
     !animationCompleted && (
       <motion.div
-        animate={quoteFinished ? "loaded" : false}
-        exit="closing"
+        animate={controls}
+        initial="hidden"
         variants={containerVariants}
-        className="z-[999] fixed w-screen h-screen"
+        className="z-[999] fixed w-screen h-screen bg-slate-900"
       >
-        {pageLoaded && (
-          <div className="md:text-[65px] absolute">
-            <Typewriter />
-          </div>
-        )}
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
-        <motion.div
-          variants={tileVariants}
-          custom={width}
-          onAnimationComplete={() => {
-            document.body.style.overflow = "visible";
-            setAnimationCompleted(true);
-          }}
-          className="z-[999] w-screen h-[20%] bg-backgroundColor"
-        ></motion.div>
+        {pageLoaded && <AnimatedText text={randomQuote} />}
       </motion.div>
     )
   );
 }
 
 const containerVariants = {
-  closing: {
+  hidden: {
     opacity: 1,
-    zIndex: 999,
-    transition: {
-      type: "Ease",
-      duration: 1,
-      delayChildren: 1,
-      staggerChildren: 0.3,
-    },
+    transform: "scaleY(100%)"
   },
   loaded: {
-    opacity: 1,
+    transform: "scaleY(0%)",
     transition: {
-      type: "Ease",
-      duration: 0,
-      delayChildren: 0.5,
-      staggerChildren: 0.2,
+      type: "EaseInOut",
+      damping: 12,
+      stiffness: 100,
+      delay: 3
     },
   },
 };
 
-const tileVariants = {
-  loaded: (width) => ({
-    x: -width,
-    transition: {
-      type: "Ease",
-      duration: 1,
-    },
-  }),
-  closing: (width) => ({
-    x: 0,
-    transition: {
-      type: "Ease",
-      duration: 1,
-    },
-  }),
-};
