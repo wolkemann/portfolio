@@ -116,7 +116,7 @@ const progressBarVariants = {
   loaded: {
     width: "99vw",
     transition: {
-      type: "spring",
+      type: "easeIn",
       damping: 12,
       stiffness: 100,
       delay: 0.5,
